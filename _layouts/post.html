@@ -26,12 +26,23 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+
+  <div class="PageNavigation">
+    {% if page.previous.url %}
+      <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+    {% endif %}
+    {% if page.next.url %}
+      <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+    {% endif %}
+  </div>
+
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
 
   <hr>
-  
+
   <div class="PageNavigation">
     {% if page.previous.url %}
       <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
@@ -41,6 +52,34 @@ layout: default
     {% endif %}
   </div>
   
+  <br>
+  
+  <div class="donate">
+    <p id="donate-req">Если вам помогла эта статья, вы можете поддержать автора:</p>
+
+  {%- include my-yoomoney-donate.html -%}
+
+  <script>
+    let params = new URLSearchParams(window.location.search);
+    
+    if(params.get("donated") == "success"){
+      let donatedCount = parseInt(localStorage.getItem("donatedCount")) || 0;
+      localStorage.setItem("donatedCount", donatedCount + 1);
+      if(donatedCount == 0){
+        document.getElementById("donate-req").innerHTML = "Спасибо за то, что поддержали автора! Вы можете сделать это ещё раз:";
+      } else {
+        document.getElementById("donate-req").innerHTML = "Большое спасибо за то, что поддержали автора <b>уже " + (donatedCount + 1) + " раза</b>! Вы можете сделать это ещё раз:";
+      }
+    } else {
+      let donatedCount = parseInt(localStorage.getItem("donatedCount")) || 0;
+      if(donatedCount == 1){
+        document.getElementById("donate-req").innerHTML = "Вы уже поддержали автора, спасибо! Вы можете сделать это ещё раз:";
+      } else if(donatedCount > 1){
+        document.getElementById("donate-req").innerHTML = "Вы поддержали автора <b>уже " + (donatedCount) + " раза</b>, большое спасибо! Вы можете сделать это ещё раз:";
+      }
+    }
+  </script>
+  </div>
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}

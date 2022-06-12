@@ -39,6 +39,7 @@ disqus:
 remote_theme: jekyll/minima
 minima:
   skin: dark
+  date_format: "%d.%m.%Y"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
