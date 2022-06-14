@@ -4,17 +4,16 @@ title: "Часть 1: Что это такое?"
 permalink: /part-1/
 ---
 
-{% capture part1tldr %}
-<p>В этом посте:</p>
+{% capture tldr %}
+В этом посте:
 
-<ul>
-<li>краткая история СМ-1800
-<li>формат шестнадцатиричных и двоичных чисел: <code class="language-plaintext highlighter-rouge">0xce00</code>, <code class="language-plaintext highlighter-rouge">0b11110010</code></li>
-<li>устройство компьютера: процессор выполняет код из памяти</li>
-<li>первые 2048 байт -- ПЗУ</li>
-</ul>
+- краткая история СМ-1800
+- формат шестнадцатиричных и двоичных чисел: `0xce00`, `0b11110010`
+- устройство компьютера: процессор выполняет код из памяти
+- первые 2048 байт -- ПЗУ
 {% endcapture %}
-{% include info-callout.html content=part1tldr %}
+
+{% include info-callout.html content=tldr %}
 
 ## Краткая история СМ-1800
 

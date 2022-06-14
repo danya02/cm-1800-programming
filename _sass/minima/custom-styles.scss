@@ -2,7 +2,12 @@
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
 // Page navigation section
-// This has issues with the navigation elements getting inlined in 
+
+.PageNavigation {
+    display: block;
+    padding: 1rem;
+}
+
 .PageNavigation .prev {
     float: left
 }
@@ -18,7 +23,7 @@ details {
 }
 
 details h1, details h2, details h3 {
-    margin-top: 0;
+    margin-top: 0 !important;
 }
 
 @import "minima/callout";
