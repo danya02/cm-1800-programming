@@ -1,0 +1,13 @@
+.callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    background-color: var(--callout-bg, #303030);
+    border-left: 0.25rem solid var(--callout-border, #999999);
+}
+
+.callout-info {
+    @extend .callout;
+    --callout-bg: rgba(13,202,240, 0.075);
+    --callout-border: rgba(13,202,240, 0.5);
+}
