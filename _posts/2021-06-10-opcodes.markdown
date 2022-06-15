@@ -1,0 +1,7 @@
+---
+layout: post
+title: "Список и таблица опкодов"
+permalink: /opcodes/
+---
+
+*under construction*
