@@ -28,9 +28,10 @@ permalink: /opcodes/
 {% assign jumps="&#x2935;" %}{% comment %}U+2935 RIGHT ARROW CURVING DOWN{% endcomment %}
 {% assign mov8="&#x1f4e9;" %}{% comment %}U+1F4E9 ENVELOPE WITH ARROW{% endcomment %}
 {% assign mov16="&#x1f4e5;" %}{% comment %}U+1F4E5 INBOX TRAY{% endcomment %}
-{% assign alu8="&#x1f4ee;" %}{% comment %}U+1F9EE ABACUS{% endcomment %}
+{% assign alu8="&#x1f9ee;" %}{% comment %}U+1F9EE ABACUS{% endcomment %}
 {% assign alu16="&#x1f4d0;" %}{% comment %}U+1F4D0 TRIANGULAR RULER{% endcomment %}
 {% assign danger="&#x1f92c;" %}{% comment %}U+1F92C FACE WITH SYMBOLS ON MOUTH{% endcomment %}
+{% assign noflags="&empty;" %}
 
 
 - {{ control }} Управление процессором
@@ -44,261 +45,261 @@ permalink: /opcodes/
 
 ## Таблица опкодов
 
-Опкод (шестнадцатиричный) | Категория | Мнемоника | Краткое описание  | Затронутые флаги
---------------------------|----------|------------|-------------------|
-00 | {{control}} | NOP | Ничего не делает |
-01 {2} {3} | {{ mov16 }} | LXI B, d16 | B <- {2}, C <- {3} |
-02 | {{mov8}} | STAX B | (BC) <- A | 
-03 | {{ alu16 }} | INX B  | BC <- BC + 1 | 
-04 | {{alu8}} | INR B | B <- B + 1 | Z, S, P, AC
-05 | {{alu8}} | DCR B | B <- B - 1 | Z, S, P, AC
-06 {2} | {{mov8}} | MVI B, d8 | B <- {2} |
-07 | {{alu8}} | RLC | A <- A << 1 (CY = пред. бит 7; бит 0 = пред. бит 7) | CY
-08 | {{danger}} | {NOP} | !!! |
-09 | {{ alu16 }} | DAD B | HL <- HL + BC |
-0A | {{mov8}} | LDAX B | A <- (BC) |
-0B | {{ alu16 }} | DCX B | BC <- BC - 1 |
-0C | {{alu8}} | INR C | C <- C + 1 | Z, S, P, AC
-0D | {{alu8}} | DCR C | C <- C - 1 | Z, S, P, AC
-0E {2} | {{mov8}} | MVI C, d8 | C <- {2} |
-0F | {{alu8}} | RRC | A <- A >> 1 (CY = пред. бит 0; бит 7 = пред. бит 0) | CY
-10 | {{danger}} | {NOP} | !!! |
-11 {2} {3} | {{ mov16 }} | LXI D, d16 | D <- {2}, E <- {3} |
-12 | {{mov8}} | STAX D | (DE) <- A |
-13 | {{ alu16 }} | INX D  | DE <- DE + 1 |
-14 | {{alu8}} | INR D | D <- D + 1 | Z, S, P, AC
-15 | {{alu8}} | DCR D | D <- D - 1 | Z, S, P, AC
-16 {2} | {{mov8}} | MVI D, d8 | D <- {2} |
-17 | {{alu8}} | RAL | A <- A << 1 (бит 0 = пред. CY, CY = пред. бит 7) | CY
-18 | {{danger}} | {NOP} | !!! |
-19 | {{ alu16 }} | DAD D | HL <- HL + DE |
-1A | {{mov8}} | LDAX D | A <- (DE) |
-1B | {{ alu16 }} | DCX D | DE <- DE - 1 |
-1C | {{alu8}} | INR E | E <- E + 1 | Z, S, P, AC
-1D | {{alu8}} | DCR E | E <- E - 1 | Z, S, P, AC
-1E {2} | {{mov8}} | MVI E, d8 | E <- {2} |
-1F | {{alu8}} | RAR | A <- A >> 1 (бит 7 = пред. CY, CY = пред. бит 0) | CY
-20 | {{danger}} | {NOP} | !!! |
-21 {2} {3} | {{ mov16 }} | LXI H, d16 | H <- {2}, L <- {3} |
-22 {2} {3} | {{ mov16 }} | SHLD a16 | (a16) <- L, (a16+1) <- H |
-23 | {{ alu16 }} | INX H  | HL <- HL + 1 |
-24 | {{alu8}} | INR H | H <- H + 1 | Z, S, P, AC
-25 | {{alu8}} | DCR H | H <- H - 1 | Z, S, P, AC
-26 {2} | {{mov8}} | MVI H, d8 | H <- {2} |
-27 | {{alu8}} | DAA | Преобразовать A в формат BCD | CY, AC
-28 | {{danger}} | {NOP} | !!! |
-29 | {{ alu16 }} | DAD H | HL <- HL + HL |
-2A {2} {3} | {{ mov16 }} | LHLD a16 | L <- (a16), H <- (a16+1) |
-2B | {{ alu16 }} | DCX H | HL <- HL - 1 |
-2C | {{alu8}} | INR L | L <- L + 1 | Z, S, P, AC
-2D | {{alu8}} | DCR L | L <- L - 1 | Z, S, P, AC
-2E {2} | {{mov8}} | MVI L, d8 | L <- {2} |
-2F | {{alu8}} | CMA | A <- ~A |
-30 | {{danger}} | {NOP} | !!! |
-31 {2} {3} | {{ mov16 }} | LXI SP, d16 | SP <- {2}, SP+1 <- {3} |
-32 {2} {3} | {{mov8}} | STA a16 | (a16) <- A |
-33 | {{ alu16 }} | INX SP | SP <- SP + 1 |
-34 | {{alu8}} | INR M | (HL) <- (HL) + 1 | Z, S, P, AC
-35 | {{alu8}} | DCR M | (HL) <- (HL) - 1 | Z, S, P, AC
-36 {2} | {{mov8}} | MVI M, d8 | (HL) <- {2} |
-37 | {{alu8}} | STC | CY <- 1 |
-38 | {{danger}} | {NOP} | !!! |
-39 | {{ alu16 }} | DAD SP | HL <- HL + SP |
-3A {2} {3} | {{mov8}} | LDA a16 | A <- (a16) |
-3B | {{ alu16 }} | DCX SP | SP <- SP - 1 |
-3C | {{alu8}} | INR A | A <- A + 1 | Z, S, P, AC
-3D | {{alu8}} | DCR A | A <- A - 1 | Z, S, P, AC
-3E {2} | {{mov8}} | MVI A, d8 | A <- {2} |
-3F | {{alu8}} | CMC | CY <- !CY |
-40 | {{mov8}} | MOV B, B {NOP} | B <- B |
-41 | {{mov8}} | MOV B, C | B <- C |
-42 | {{mov8}} | MOV B, D | B <- D |
-43 | {{mov8}} | MOV B, E | B <- E |
-44 | {{mov8}} | MOV B, H | B <- H |
-45 | {{mov8}} | MOV B, L | B <- L |
-46 | {{mov8}} | MOV B, M | B <- (HL) |
-47 | {{mov8}} | MOV B, A | B <- A |
-48 | {{mov8}} | MOV C, B | C <- B |
-49 | {{mov8}} | MOV C, C {NOP} | C <- C |
-4A | {{mov8}} | MOV C, D | C <- D |
-4B | {{mov8}} | MOV C, E | C <- E |
-4C | {{mov8}} | MOV C, H | C <- H |
-4D | {{mov8}} | MOV C, L | C <- L |
-4E | {{mov8}} | MOV C, M | C <- (HL) |
-4F | {{mov8}} | MOV C, A | C <- A |
-50 | {{mov8}} | MOV D, B | D <- B |
-51 | {{mov8}} | MOV D, C | D <- C |
-52 | {{mov8}} | MOV D, D {NOP} | D <- D |
-53 | {{mov8}} | MOV D, E | D <- E |
-54 | {{mov8}} | MOV D, H | D <- H |
-55 | {{mov8}} | MOV D, L | D <- L |
-56 | {{mov8}} | MOV D, M | D <- (HL) |
-57 | {{mov8}} | MOV D, A | D <- A |
-58 | {{mov8}} | MOV E, B | E <- B |
-59 | {{mov8}} | MOV E, C | E <- C |
-5A | {{mov8}} | MOV E, D | E <- D |
-5B | {{mov8}} | MOV E, E {NOP} | E <- E |
-5C | {{mov8}} | MOV E, H | E <- H |
-5D | {{mov8}} | MOV E, L | E <- L |
-5E | {{mov8}} | MOV E, M | E <- (HL) |
-5F | {{mov8}} | MOV E, A | E <- A |
-60 | {{mov8}} | MOV H, B | H <- B |
-61 | {{mov8}} | MOV H, C | H <- C |
-62 | {{mov8}} | MOV H, D | H <- D |
-63 | {{mov8}} | MOV H, E | H <- E |
-64 | {{mov8}} | MOV H, H {NOP} | H <- H |
-65 | {{mov8}} | MOV H, L | H <- L |
-66 | {{mov8}} | MOV H, M | H <- (HL) |
-67 | {{mov8}} | MOV H, A | H <- A |
-68 | {{mov8}} | MOV L, B | L <- B |
-69 | {{mov8}} | MOV L, C | L <- C |
-6A | {{mov8}} | MOV L, D | L <- D |
-6B | {{mov8}} | MOV L, E | L <- E |
-6C | {{mov8}} | MOV L, H | L <- H |
-6D | {{mov8}} | MOV L, L {NOP} | L <- L |
-6E | {{mov8}} | MOV L, M | L <- (HL) |
-6F | {{mov8}} | MOV L, A | L <- A |
-70 | {{mov8}} | MOV M, B | (HL) <- B |
-71 | {{mov8}} | MOV M, C | (HL) <- C |
-72 | {{mov8}} | MOV M, D | (HL) <- D |
-73 | {{mov8}} | MOV M, E | (HL) <- E |
-74 | {{mov8}} | MOV M, H | (HL) <- H |
-75 | {{mov8}} | MOV M, L | (HL) <- L |
-76 | {{control}} | HLT | Остановить процессор |
-77 | {{mov8}} | MOV M, A | (HL) <- A |
-78 | {{mov8}} | MOV A, B | A <- B |
-79 | {{mov8}} | MOV A, C | A <- C |
-7A | {{mov8}} | MOV A, D | A <- D |
-7B | {{mov8}} | MOV A, E | A <- E |
-7C | {{mov8}} | MOV A, H | A <- H |
-7D | {{mov8}} | MOV A, L | A <- L |
-7E | {{mov8}} | MOV A, M | A <- (HL) |
-7F | {{mov8}} | MOV A, A {NOP} | A <- A |
-80 | {{alu8}} | ADD B | A <- A + B | Z, S, P, CY, AC
-81 | {{alu8}} | ADD C | A <- A + C | Z, S, P, CY, AC
-82 | {{alu8}} | ADD D | A <- A + D | Z, S, P, CY, AC
-83 | {{alu8}} | ADD E | A <- A + E | Z, S, P, CY, AC
-84 | {{alu8}} | ADD H | A <- A + H | Z, S, P, CY, AC
-85 | {{alu8}} | ADD L | A <- A + L | Z, S, P, CY, AC
-86 | {{alu8}} | ADD M | A <- A + (HL) | Z, S, P, CY, AC
-87 | {{alu8}} | ADD A | A <- A + A | Z, S, P, CY, AC
-88 | {{alu8}} | ADC B | A <- A + B + CY | Z, S, P, CY, AC
-89 | {{alu8}} | ADC C | A <- A + C + CY | Z, S, P, CY, AC
-8A | {{alu8}} | ADC D | A <- A + D + CY | Z, S, P, CY, AC
-8B | {{alu8}} | ADC E | A <- A + E + CY | Z, S, P, CY, AC
-8C | {{alu8}} | ADC H | A <- A + H + CY | Z, S, P, CY, AC
-8D | {{alu8}} | ADC L | A <- A + L + CY | Z, S, P, CY, AC
-8E | {{alu8}} | ADC M | A <- A + (HL) + CY | Z, S, P, CY, AC
-8F | {{alu8}} | ADC A | A <- A + A + CY | Z, S, P, CY, AC
-90 | {{alu8}} | SUB B | A <- A - B | Z, S, P, CY, AC
-91 | {{alu8}} | SUB C | A <- A - C | Z, S, P, CY, AC
-92 | {{alu8}} | SUB D | A <- A - D | Z, S, P, CY, AC
-93 | {{alu8}} | SUB E | A <- A - E | Z, S, P, CY, AC
-94 | {{alu8}} | SUB H | A <- A - H | Z, S, P, CY, AC
-95 | {{alu8}} | SUB L | A <- A - L | Z, S, P, CY, AC
-96 | {{alu8}} | SUB M | A <- A - (HL) | Z, S, P, CY, AC
-97 | {{alu8}} | SUB A | A <- A - A {A <- 0}| Z, S, P, CY, AC
-98 | {{alu8}} | SBB B | A <- A - B - CY | Z, S, P, CY, AC
-99 | {{alu8}} | SBB C | A <- A - C - CY | Z, S, P, CY, AC
-9A | {{alu8}} | SBB D | A <- A - D - CY | Z, S, P, CY, AC
-9B | {{alu8}} | SBB E | A <- A - E - CY | Z, S, P, CY, AC
-9C | {{alu8}} | SBB H | A <- A - H - CY | Z, S, P, CY, AC
-9D | {{alu8}} | SBB L | A <- A - L - CY | Z, S, P, CY, AC
-9E | {{alu8}} | SBB M | A <- A - (HL) - CY | Z, S, P, CY, AC
-9F | {{alu8}} | SBB A | A <- A - A - CY | Z, S, P, CY, AC
-A0 | {{alu8}} | ANA B | A <- A & B | Z, S, P, CY, AC
-A1 | {{alu8}} | ANA C | A <- A & C | Z, S, P, CY, AC
-A2 | {{alu8}} | ANA D | A <- A & D | Z, S, P, CY, AC
-A3 | {{alu8}} | ANA E | A <- A & E | Z, S, P, CY, AC
-A4 | {{alu8}} | ANA H | A <- A & H | Z, S, P, CY, AC
-A5 | {{alu8}} | ANA L | A <- A & L | Z, S, P, CY, AC
-A6 | {{alu8}} | ANA M | A <- A & (HL) | Z, S, P, CY, AC
-A7 | {{alu8}} | ANA A | A <- A & A {NOP} | Z, S, P, CY, AC
-A8 | {{alu8}} | XRA B | A <- A ^ B | Z, S, P, CY, AC
-A9 | {{alu8}} | XRA C | A <- A ^ C | Z, S, P, CY, AC
-AA | {{alu8}} | XRA D | A <- A ^ D | Z, S, P, CY, AC
-AB | {{alu8}} | XRA E | A <- A ^ E | Z, S, P, CY, AC
-AC | {{alu8}} | XRA H | A <- A ^ H | Z, S, P, CY, AC
-AD | {{alu8}} | XRA L | A <- A ^ L | Z, S, P, CY, AC
-AE | {{alu8}} | XRA M | A <- A ^ (HL) | Z, S, P, CY, AC
-AF | {{alu8}} | XRA A | A <- A ^ A {A <- 0} | Z, S, P, CY, AC
-B0 | {{alu8}} | ORA B | A <- A | B | Z, S, P, CY, AC
-B1 | {{alu8}} | ORA C | A <- A | C | Z, S, P, CY, AC
-B2 | {{alu8}} | ORA D | A <- A | D | Z, S, P, CY, AC
-B3 | {{alu8}} | ORA E | A <- A | E | Z, S, P, CY, AC
-B4 | {{alu8}} | ORA H | A <- A | H | Z, S, P, CY, AC
-B5 | {{alu8}} | ORA L | A <- A | L | Z, S, P, CY, AC
-B6 | {{alu8}} | ORA M | A <- A | (HL) | Z, S, P, CY, AC
-B7 | {{alu8}} | ORA A | A <- A | A {NOP} | Z, S, P, CY, AC
-B8 | {{alu8}} | CMP B | &empty; <- A - B | Z, S, P, CY, AC
-B9 | {{alu8}} | CMP C | &empty; <- A - C | Z, S, P, CY, AC
-BA | {{alu8}} | CMP D | &empty; <- A - D | Z, S, P, CY, AC
-BB | {{alu8}} | CMP E | &empty; <- A - E | Z, S, P, CY, AC
-BC | {{alu8}} | CMP H | &empty; <- A - H | Z, S, P, CY, AC
-BD | {{alu8}} | CMP L | &empty; <- A - L | Z, S, P, CY, AC
-BE | {{alu8}} | CMP M | &empty; <- A - (HL) | Z, S, P, CY, AC
-BF | {{alu8}} | CMP A | &empty; <- A - A | Z, S, P, CY, AC
-C0 | {{jumps}} | RNZ | если не Z, PC <- POP() |
-C1 | {{ mov16 }} | POP B | BC <- POP() | 
-C2 {2} {3} | {{jumps}} | JNZ a16 | если не Z, PC <- a16 | 
-C3 {2} {3} | {{jumps}} | JMP a16 | PC <- a16 | 
-C4 {2} {3} | {{jumps}} | CNZ a16 | если не Z, PUSH(PC) и PC <- a16 |
-C5 | {{mov16}} | PUSH B | PUSH(BC) |
-C6 {2} | {{alu8}} | ADI d8 | A <- A + {2} | Z, S, P, CY, AC
-C7 | {{jumps}} | RST 0 | PUSH(PC) и PC <- 0x0000 |
-C8 | {{jumps}} | RZ | если Z, PC <- POP() |
-C9 | {{jumps}} | RET | PC <- POP() |
-CA {2} {3} | {{jumps}} | JZ a16 | если Z, PC <- a16 |
-CB {2} {3} | {{danger}} | {JMP a16} | !!! | 
-CC {2} {3} | {{jumps}} | CZ a16 | если Z, PUSH(PC) и PC <- a16 |
-CD {2} {3} | {{jumps}} | CALL a16 | PUSH(PC) и PC <- a16 |
-CE {2} | {{alu8}} | ACI d8 | A <- A + {2} + CY | Z, S, P, CY, AC
-CF | {{jumps}} | RST 1 | PUSH(PC) и PC <- 0x0008 |
-D0 | {{jumps}} | RNC | если не CY, PC <- POP() |
-D1 | {{ mov16 }} | POP D | DE <- POP() |
-D2 {2} {3} | {{jumps}} | JNC a16 | если не CY, PC <- a16 |
-D3 {2} | {{control}} | OUT d8 | если не CY, выводим A в порт {2} |
-D4 {2} {3} | {{jumps}} | CNC a16 | если не CY, PUSH(PC) и PC <- a16 |
-D5 | {{mov16}} | PUSH D | PUSH(DE) |
-D6 {2} | {{alu8}} | SUI d8 | A <- A - {2} | Z, S, P, CY, AC
-D7 | {{jumps}} | RST 2 | PUSH(PC) и PC <- 0x0010 |
-D8 | {{jumps}} | RC | если не CY, PC <- POP() |
-D9 | {{danger}} | {RET} | !!! |
-DA {2} {3} | {{jumps}} | JC a16 | если CY, PC <- a16 |
-DB {2} {3} | {{control}} | IN d8 | считываем значение в A из порта {2} |
-DC {2} {3} | {{jumps}} | CC a16 | если CY, PUSH(PC) и PC <- a16 |
-DD {2} {3} | {{danger}} | {CALL d16} | !!! |
-DE {2} | {{alu8}} | SBI d8 | A <- A - {2} - CY | Z, S, P, CY, AC
-DF | {{jumps}} | RST 3 | PUSH(PC) и PC <- 0x0018 |
-E0 {2} {3} | {{jumps}} | RPO | если не P, PC <- POP() |
-E1 | {{ mov16 }} | POP H | HL <- POP() |
-E2 {2} {3} | {{jumps}} | JPO a16 | если не P, PC <- a16 |
-E3 {2} {3} | {{ mov16 }} | XTHL | tmp1 <- (SP); tmp2 <- (SP+1); (SP) <- L; (SP+1) <- H; H <- tmp1; L <- tmp2 |
-E4 {2} {3} | {{jumps}} | CPO a16 | если не P, PUSH(PC) и PC <- a16 |
-E5 | {{mov16}} | PUSH H | PUSH(HL) |
-E6 {2} | {{alu8}} | ANI d8 | A <- A & {2} | Z, S, P, CY, AC
-E7 | {{jumps}} | RST 4 | PUSH(PC) и PC <- 0x0020 |
-E8 | {{jumps}} | RPE | если P, PC <- POP() |
-E9 | {{jumps}} | PCHL | PC <- HL {JMP HL} |
-EA {2} {3} | {{jumps}} | JPE a16 | если P, PC <- a16 |
-EB {2} {3} | {{ mov16 }} | XCHG | tmp <- DE; DE <- HL; HL <- tmp |
-EC {2} {3} | {{jumps}} | CPE a16 | если P, PUSH(PC) и PC <- a16 |
-ED {2} {3} | {{danger}} | {CALL d16} | !!! |
-EE {2} | {{alu8}} | XRI d8 | A <- A ^ {2} | Z, S, P, CY, AC
-EF | {{jumps}} | RST 5 | PUSH(PC) и PC <- 0x0028 |
-F0 {2} {3} | {{jumps}} | RP | если не S, PC <- POP() |
-F1 | {{ mov16 }} | POP PSW | AF <- POP() | Z, S, P, CY, AC
-F2 {2} {3} | {{jumps}} | JP a16 | если не S, PC <- a16 |
-F3 {2} {3} | {{control}} | DI | выключаем систему прирываний (INTE <- 0) |
-F4 {2} {3} | {{jumps}} | CP a16 | если не S, PUSH(PC) и PC <- a16 |
-F5 | {{ mov16 }} | PUSH PSW | PUSH(AF) |
-F6 {2} | {{alu8}} | ORI d8 | A <- A | Z, S, P, CY, AC
-F7 | {{jumps}} | RST 6 | PUSH(PC) и PC <- 0x0030 |
-F8 {2} {3} | {{jumps}} | RM | если не S, PC <- POP() |
-F9 | {{ mov16 }} | SPHL | SP <- HL |
-FA {2} {3} | {{jumps}} | JM a16 | если S, PC <- a16 |
-FB {2} {3} | {{control}} | EI | включаем систему прирываний (INTE <- 1) |
-FC {2} {3} | {{jumps}} | CM a16 | если S, PUSH(PC) и PC <- a16 |
-FD {2} {3} | {{danger}} | {CALL d16} | !!! |
-FE {2} | {{alu8}} | CPI d8 | A <- A - {2} - CY | Z, S, P, CY, AC
-FF | {{jumps}} | RST 7 | PUSH(PC) и PC <- 0x0038 |
+Опкод (hex) | Категория | Мнемоника | Краткое описание  | Затронутые флаги | Ссылка на описание |
+--------------------------|----------|------------|-------------------|------------------|-------------------|
+00 | {{control}} | NOP | Ничего не делает | {{noflags}} | [NOP](#nop)
+01 {2} {3} | {{ mov16 }} | LXI B, d16 | B <- {2}, C <- {3} | {{noflags}} | [LXI](#lxi)
+02 | {{mov8}} | STAX B | (BC) <- A | {{noflags}} | [LDAX/STAX](#ldax-stax)
+03 | {{ alu16 }} | INX B  | BC <- BC + 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+04 | {{alu8}} | INR B | B <- B + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+05 | {{alu8}} | DCR B | B <- B - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+06 {2} | {{mov8}} | MVI B, d8 | B <- {2} | {{noflags}} | [MVI](#mvi)
+07 | {{alu8}} | RLC | A <- A << 1 (CY = пред. бит 7; бит 0 = пред. бит 7) | CY | [RLC/RRC/RAL/RAR](#rlc-rrc-ral-rar)
+08 | {{danger}} | {NOP} | !!! | {{noflags}} | [Неопределенные инструкции](#неопределенные-инструкции)
+09 | {{ alu16 }} | DAD B | HL <- HL + BC | {{noflags}} | [DAD](#dad)
+0A | {{mov8}} | LDAX B | A <- (BC) | {{noflags}} | [LDAX/STAX](#ldax-stax)
+0B | {{ alu16 }} | DCX B | BC <- BC - 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+0C | {{alu8}} | INR C | C <- C + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+0D | {{alu8}} | DCR C | C <- C - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+0E {2} | {{mov8}} | MVI C, d8 | C <- {2} | {{noflags}} | [MVI](#mvi)
+0F | {{alu8}} | RRC | A <- A >> 1 (CY = пред. бит 0; бит 7 = пред. бит 0) | CY | [RLC/RRC/RAL/RAR](#rlc-rrc-ral-rar)
+10 | {{danger}} | {NOP} | !!! | {{noflags}} | [Неопределенные инструкции](#неопределенные-инструкции)
+11 {2} {3} | {{ mov16 }} | LXI D, d16 | D <- {2}, E <- {3} | {{noflags}} | [LXI](#lxi)
+12 | {{mov8}} | STAX D | (DE) <- A | {{noflags}} | [LDAX/STAX](#ldax-stax)
+13 | {{ alu16 }} | INX D  | DE <- DE + 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+14 | {{alu8}} | INR D | D <- D + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+15 | {{alu8}} | DCR D | D <- D - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+16 {2} | {{mov8}} | MVI D, d8 | D <- {2} | {{noflags}} | [MVI](#mvi)
+17 | {{alu8}} | RAL | A <- A << 1 (бит 0 = пред. CY, CY = пред. бит 7) | CY | [RLC/RRC/RAL/RAR](#rlc-rrc-ral-rar)
+18 | {{danger}} | {NOP} | !!! | {{noflags}} | [Неопределенные инструкции](#неопределенные-инструкции)
+19 | {{ alu16 }} | DAD D | HL <- HL + DE | {{noflags}} | [DAD](#dad)
+1A | {{mov8}} | LDAX D | A <- (DE) | {{noflags}} | [LDAX/STAX](#ldax-stax)
+1B | {{ alu16 }} | DCX D | DE <- DE - 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+1C | {{alu8}} | INR E | E <- E + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+1D | {{alu8}} | DCR E | E <- E - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+1E {2} | {{mov8}} | MVI E, d8 | E <- {2} | {{noflags}} | [MVI](#mvi)
+1F | {{alu8}} | RAR | A <- A >> 1 (бит 7 = пред. CY, CY = пред. бит 0) | CY | [RLC/RRC/RAL/RAR](#rlc-rrc-ral-rar)
+20 | {{danger}} | {NOP} | !!! | {{noflags}} | [Неопределенные инструкции](#неопределенные-инструкции)
+21 {2} {3} | {{ mov16 }} | LXI H, d16 | H <- {2}, L <- {3} | {{noflags}} | [LXI](#lxi)
+22 {2} {3} | {{ mov16 }} | SHLD a16 | (a16) <- L, (a16+1) <- H | {{noflags}} | [SHLD/LHLD](#shld-lhld)
+23 | {{ alu16 }} | INX H  | HL <- HL + 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+24 | {{alu8}} | INR H | H <- H + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+25 | {{alu8}} | DCR H | H <- H - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+26 {2} | {{mov8}} | MVI H, d8 | H <- {2} | {{noflags}} | [MVI](#mvi)
+27 | {{alu8}} | DAA | Преобразовать A в формат BCD | CY, AC | [DAA](#daa)
+28 | {{danger}} | {NOP} | !!! | {{noflags}} | [Неопределенные инструкции](#неопределенные-инструкции)
+29 | {{ alu16 }} | DAD H | HL <- HL + HL | {{noflags}} | [DAD](#dad)
+2A {2} {3} | {{ mov16 }} | LHLD a16 | L <- (a16), H <- (a16+1) | {{noflags}} | [LHLD/SHLD](#lhld-shld)
+2B | {{ alu16 }} | DCX H | HL <- HL - 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+2C | {{alu8}} | INR L | L <- L + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+2D | {{alu8}} | DCR L | L <- L - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+2E {2} | {{mov8}} | MVI L, d8 | L <- {2} | {{noflags}} | [MVI](#mvi)
+2F | {{alu8}} | CMA | A <- ~A | {{noflags}} | [CMA](#cma)
+30 | {{danger}} | {NOP} | !!! | {{noflags}} | [Неопределенные инструкции](#неопределенные-инструкции)
+31 {2} {3} | {{ mov16 }} | LXI SP, d16 | SP <- {2}, SP+1 <- {3} | {{noflags}} | [LXI](#lxi)
+32 {2} {3} | {{mov8}} | STA a16 | (a16) <- A | {{noflags}} | [STA](#sta)
+33 | {{ alu16 }} | INX SP | SP <- SP + 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+34 | {{alu8}} | INR M | (HL) <- (HL) + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+35 | {{alu8}} | DCR M | (HL) <- (HL) - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+36 {2} | {{mov8}} | MVI M, d8 | (HL) <- {2} | {{noflags}} | [MVI](#mvi)
+37 | {{alu8}} | STC | CY <- 1 | {{noflags}} | [STC/CMC](#stc-cmc)
+38 | {{danger}} | {NOP} | !!! | {{noflags}} | [Неопределенные инструкции](#неопределенные-инструкции)
+39 | {{ alu16 }} | DAD SP | HL <- HL + SP | {{noflags}} | [DAD](#dad)
+3A {2} {3} | {{mov8}} | LDA a16 | A <- (a16) | {{noflags}} | [LDA](#lda)
+3B | {{ alu16 }} | DCX SP | SP <- SP - 1 | {{noflags}} | [INX/DCX](#inx-dcx)
+3C | {{alu8}} | INR A | A <- A + 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+3D | {{alu8}} | DCR A | A <- A - 1 | Z, S, P, AC | [INR/DCR](#inr-dcr)
+3E {2} | {{mov8}} | MVI A, d8 | A <- {2} | {{noflags}} | [MVI](#mvi)
+3F | {{alu8}} | CMC | CY <- !CY | {{noflags}} | [STC/CMC](#stc-cmc)
+40 | {{mov8}} | MOV B, B {NOP} | B <- B | {{noflags}} | [MOV](#mov)
+41 | {{mov8}} | MOV B, C | B <- C | {{noflags}} | [MOV](#mov)
+42 | {{mov8}} | MOV B, D | B <- D | {{noflags}} | [MOV](#mov)
+43 | {{mov8}} | MOV B, E | B <- E | {{noflags}} | [MOV](#mov) 
+44 | {{mov8}} | MOV B, H | B <- H | {{noflags}} | [MOV](#mov)
+45 | {{mov8}} | MOV B, L | B <- L | {{noflags}} | [MOV](#mov)
+46 | {{mov8}} | MOV B, M | B <- (HL) | {{noflags}} | [MOV](#mov)
+47 | {{mov8}} | MOV B, A | B <- A | {{noflags}} | [MOV](#mov)
+48 | {{mov8}} | MOV C, B | C <- B | {{noflags}} | [MOV](#mov)
+49 | {{mov8}} | MOV C, C {NOP} | C <- C | {{noflags}} | [MOV](#mov)
+4A | {{mov8}} | MOV C, D | C <- D | {{noflags}} | [MOV](#mov)
+4B | {{mov8}} | MOV C, E | C <- E | {{noflags}} | [MOV](#mov)
+4C | {{mov8}} | MOV C, H | C <- H | {{noflags}} | [MOV](#mov)
+4D | {{mov8}} | MOV C, L | C <- L | {{noflags}} | [MOV](#mov)
+4E | {{mov8}} | MOV C, M | C <- (HL) | {{noflags}} | [MOV](#mov)
+4F | {{mov8}} | MOV C, A | C <- A | {{noflags}} | [MOV](#mov) 
+50 | {{mov8}} | MOV D, B | D <- B | {{noflags}} | [MOV](#mov) 
+51 | {{mov8}} | MOV D, C | D <- C | {{noflags}} | [MOV](#mov) 
+52 | {{mov8}} | MOV D, D {NOP} | D <- D | {{noflags}} | [MOV](#mov)
+53 | {{mov8}} | MOV D, E | D <- E | {{noflags}} | [MOV](#mov)
+54 | {{mov8}} | MOV D, H | D <- H | {{noflags}} | [MOV](#mov)
+55 | {{mov8}} | MOV D, L | D <- L | {{noflags}} | [MOV](#mov)
+56 | {{mov8}} | MOV D, M | D <- (HL) |  {{noflags}} | [MOV](#mov)
+57 | {{mov8}} | MOV D, A | D <- A | {{noflags}} | [MOV](#mov)
+58 | {{mov8}} | MOV E, B | E <- B | {{noflags}} | [MOV](#mov)
+59 | {{mov8}} | MOV E, C | E <- C | {{noflags}} | [MOV](#mov)
+5A | {{mov8}} | MOV E, D | E <- D | {{noflags}} | [MOV](#mov)
+5B | {{mov8}} | MOV E, E {NOP} | E <- E |   {{noflags}} | [MOV](#mov)
+5C | {{mov8}} | MOV E, H | E <- H | {{noflags}} | [MOV](#mov)
+5D | {{mov8}} | MOV E, L | E <- L | {{noflags}} | [MOV](#mov)
+5E | {{mov8}} | MOV E, M | E <- (HL) |  {{noflags}} | [MOV](#mov)
+5F | {{mov8}} | MOV E, A | E <- A | {{noflags}} | [MOV](#mov)
+60 | {{mov8}} | MOV H, B | H <- B | {{noflags}} | [MOV](#mov)
+61 | {{mov8}} | MOV H, C | H <- C | {{noflags}} | [MOV](#mov)
+62 | {{mov8}} | MOV H, D | H <- D | {{noflags}} | [MOV](#mov)
+63 | {{mov8}} | MOV H, E | H <- E | {{noflags}} | [MOV](#mov)
+64 | {{mov8}} | MOV H, H {NOP} | H <- H | {{noflags}} | [MOV](#mov)
+65 | {{mov8}} | MOV H, L | H <- L | {{noflags}} | [MOV](#mov)
+66 | {{mov8}} | MOV H, M | H <- (HL) | {{noflags}} | [MOV](#mov)
+67 | {{mov8}} | MOV H, A | H <- A | {{noflags}} | [MOV](#mov)
+68 | {{mov8}} | MOV L, B | L <- B | {{noflags}} | [MOV](#mov)
+69 | {{mov8}} | MOV L, C | L <- C | {{noflags}} | [MOV](#mov)
+6A | {{mov8}} | MOV L, D | L <- D | {{noflags}} | [MOV](#mov)
+6B | {{mov8}} | MOV L, E | L <- E | {{noflags}} | [MOV](#mov)
+6C | {{mov8}} | MOV L, H | L <- H | {{noflags}} | [MOV](#mov)
+6D | {{mov8}} | MOV L, L {NOP} | L <- L | {{noflags}} | [MOV](#mov)
+6E | {{mov8}} | MOV L, M | L <- (HL) | {{noflags}} | [MOV](#mov)
+6F | {{mov8}} | MOV L, A | L <- A | {{noflags}} | [MOV](#mov)
+70 | {{mov8}} | MOV M, B | (HL) <- B | {{noflags}} | [MOV](#mov)
+71 | {{mov8}} | MOV M, C | (HL) <- C | {{noflags}} | [MOV](#mov)
+72 | {{mov8}} | MOV M, D | (HL) <- D | {{noflags}} | [MOV](#mov)
+73 | {{mov8}} | MOV M, E | (HL) <- E | {{noflags}} | [MOV](#mov)
+74 | {{mov8}} | MOV M, H | (HL) <- H | {{noflags}} | [MOV](#mov)
+75 | {{mov8}} | MOV M, L | (HL) <- L | {{noflags}} | [MOV](#mov)
+76 | {{control}} | HLT | Остановить процессор | {{noflags}} | [HLT](#hlt)
+77 | {{mov8}} | MOV M, A | (HL) <- A | {{noflags}} | [MOV](#mov) 
+78 | {{mov8}} | MOV A, B | A <- B | {{noflags}} | [MOV](#mov)
+79 | {{mov8}} | MOV A, C | A <- C | {{noflags}} | [MOV](#mov)
+7A | {{mov8}} | MOV A, D | A <- D | {{noflags}} | [MOV](#mov)
+7B | {{mov8}} | MOV A, E | A <- E | {{noflags}} | [MOV](#mov)
+7C | {{mov8}} | MOV A, H | A <- H | {{noflags}} | [MOV](#mov)
+7D | {{mov8}} | MOV A, L | A <- L | {{noflags}} | [MOV](#mov)
+7E | {{mov8}} | MOV A, M | A <- (HL) | {{noflags}} | [MOV](#mov)
+7F | {{mov8}} | MOV A, A {NOP} | A <- A | {{noflags}} | [MOV](#mov)
+80 | {{alu8}} | ADD B | A <- A + B | Z, S, P, CY, AC | [ADD](#add)
+81 | {{alu8}} | ADD C | A <- A + C | Z, S, P, CY, AC | [ADD](#add)
+82 | {{alu8}} | ADD D | A <- A + D | Z, S, P, CY, AC | [ADD](#add)
+83 | {{alu8}} | ADD E | A <- A + E | Z, S, P, CY, AC | [ADD](#add)
+84 | {{alu8}} | ADD H | A <- A + H | Z, S, P, CY, AC | [ADD](#add)
+85 | {{alu8}} | ADD L | A <- A + L | Z, S, P, CY, AC | [ADD](#add)
+86 | {{alu8}} | ADD M | A <- A + (HL) | Z, S, P, CY, AC | [ADD](#add)
+87 | {{alu8}} | ADD A | A <- A + A | Z, S, P, CY, AC | [ADD](#add)
+88 | {{alu8}} | ADC B | A <- A + B + CY | Z, S, P, CY, AC | [ADC](#adc)
+89 | {{alu8}} | ADC C | A <- A + C + CY | Z, S, P, CY, AC | [ADC](#adc)
+8A | {{alu8}} | ADC D | A <- A + D + CY | Z, S, P, CY, AC | [ADC](#adc)
+8B | {{alu8}} | ADC E | A <- A + E + CY | Z, S, P, CY, AC | [ADC](#adc)
+8C | {{alu8}} | ADC H | A <- A + H + CY | Z, S, P, CY, AC | [ADC](#adc)
+8D | {{alu8}} | ADC L | A <- A + L + CY | Z, S, P, CY, AC | [ADC](#adc)
+8E | {{alu8}} | ADC M | A <- A + (HL) + CY | Z, S, P, CY, AC | [ADC](#adc)
+8F | {{alu8}} | ADC A | A <- A + A + CY | Z, S, P, CY, AC | [ADC](#adc)
+90 | {{alu8}} | SUB B | A <- A - B | Z, S, P, CY, AC | [SUB](#sub)
+91 | {{alu8}} | SUB C | A <- A - C | Z, S, P, CY, AC | [SUB](#sub)
+92 | {{alu8}} | SUB D | A <- A - D | Z, S, P, CY, AC | [SUB](#sub)
+93 | {{alu8}} | SUB E | A <- A - E | Z, S, P, CY, AC | [SUB](#sub)
+94 | {{alu8}} | SUB H | A <- A - H | Z, S, P, CY, AC | [SUB](#sub)
+95 | {{alu8}} | SUB L | A <- A - L | Z, S, P, CY, AC | [SUB](#sub)
+96 | {{alu8}} | SUB M | A <- A - (HL) | Z, S, P, CY, AC | [SUB](#sub)
+97 | {{alu8}} | SUB A | A <- A - A {A <- 0}| Z, S, P, CY, AC | [SUB](#sub)
+98 | {{alu8}} | SBB B | A <- A - B - CY | Z, S, P, CY, AC | [SBB](#sbb)
+99 | {{alu8}} | SBB C | A <- A - C - CY | Z, S, P, CY, AC | [SBB](#sbb)
+9A | {{alu8}} | SBB D | A <- A - D - CY | Z, S, P, CY, AC | [SBB](#sbb)
+9B | {{alu8}} | SBB E | A <- A - E - CY | Z, S, P, CY, AC | [SBB](#sbb)
+9C | {{alu8}} | SBB H | A <- A - H - CY | Z, S, P, CY, AC | [SBB](#sbb)
+9D | {{alu8}} | SBB L | A <- A - L - CY | Z, S, P, CY, AC | [SBB](#sbb)
+9E | {{alu8}} | SBB M | A <- A - (HL) - CY | Z, S, P, CY, AC | [SBB](#sbb)
+9F | {{alu8}} | SBB A | A <- A - A - CY | Z, S, P, CY, AC | [SBB](#sbb)
+A0 | {{alu8}} | ANA B | A <- A & B | Z, S, P, CY, AC | [ANA](#ana)
+A1 | {{alu8}} | ANA C | A <- A & C | Z, S, P, CY, AC | [ANA](#ana)
+A2 | {{alu8}} | ANA D | A <- A & D | Z, S, P, CY, AC | [ANA](#ana)
+A3 | {{alu8}} | ANA E | A <- A & E | Z, S, P, CY, AC | [ANA](#ana)
+A4 | {{alu8}} | ANA H | A <- A & H | Z, S, P, CY, AC | [ANA](#ana) 
+A5 | {{alu8}} | ANA L | A <- A & L | Z, S, P, CY, AC | [ANA](#ana)
+A6 | {{alu8}} | ANA M | A <- A & (HL) | Z, S, P, CY, AC | [ANA](#ana)
+A7 | {{alu8}} | ANA A | A <- A & A {NOP} | Z, S, P, CY, AC | [ANA](#ana)
+A8 | {{alu8}} | XRA B | A <- A ^ B | Z, S, P, CY, AC | [XRA](#xra)
+A9 | {{alu8}} | XRA C | A <- A ^ C | Z, S, P, CY, AC | [XRA](#xra)
+AA | {{alu8}} | XRA D | A <- A ^ D | Z, S, P, CY, AC | [XRA](#xra)
+AB | {{alu8}} | XRA E | A <- A ^ E | Z, S, P, CY, AC | [XRA](#xra)
+AC | {{alu8}} | XRA H | A <- A ^ H | Z, S, P, CY, AC | [XRA](#xra)
+AD | {{alu8}} | XRA L | A <- A ^ L | Z, S, P, CY, AC | [XRA](#xra)
+AE | {{alu8}} | XRA M | A <- A ^ (HL) | Z, S, P, CY, AC | [XRA](#xra)
+AF | {{alu8}} | XRA A | A <- A ^ A {A <- 0} | Z, S, P, CY, AC | [XRA](#xra)
+B0 | {{alu8}} | ORA B | A <- A \| B | Z, S, P, CY, AC | [ORA](#ora)
+B1 | {{alu8}} | ORA C | A <- A \| C | Z, S, P, CY, AC | [ORA](#ora)
+B2 | {{alu8}} | ORA D | A <- A \| D | Z, S, P, CY, AC | [ORA](#ora)
+B3 | {{alu8}} | ORA E | A <- A \| E | Z, S, P, CY, AC | [ORA](#ora)
+B4 | {{alu8}} | ORA H | A <- A \| H | Z, S, P, CY, AC | [ORA](#ora)
+B5 | {{alu8}} | ORA L | A <- A \| L | Z, S, P, CY, AC | [ORA](#ora)
+B6 | {{alu8}} | ORA M | A <- A \| (HL) | Z, S, P, CY, AC | [ORA](#ora)
+B7 | {{alu8}} | ORA A | A <- A \| A {NOP} | Z, S, P, CY, AC | [ORA](#ora)
+B8 | {{alu8}} | CMP B | &empty; <- A - B | Z, S, P, CY, AC | [CMP](#cmp)
+B9 | {{alu8}} | CMP C | &empty; <- A - C | Z, S, P, CY, AC | [CMP](#cmp)
+BA | {{alu8}} | CMP D | &empty; <- A - D | Z, S, P, CY, AC | [CMP](#cmp)
+BB | {{alu8}} | CMP E | &empty; <- A - E | Z, S, P, CY, AC | [CMP](#cmp)
+BC | {{alu8}} | CMP H | &empty; <- A - H | Z, S, P, CY, AC | [CMP](#cmp)
+BD | {{alu8}} | CMP L | &empty; <- A - L | Z, S, P, CY, AC | [CMP](#cmp)
+BE | {{alu8}} | CMP M | &empty; <- A - (HL) | Z, S, P, CY, AC | [CMP](#cmp)
+BF | {{alu8}} | CMP A | &empty; <- A - A | Z, S, P, CY, AC | [CMP](#cmp)
+C0 | {{jumps}} | RNZ | если не Z, PC <- POP() | {{noflags}} | [RET](#ret)
+C1 | {{ mov16 }} | POP B | BC <- POP() | {{noflags}} | [PUSH/POP](#push-pop)
+C2 {2} {3} | {{jumps}} | JNZ a16 | если не Z, PC <- a16 | {{noflags}} | [JMP](#jmp)
+C3 {2} {3} | {{jumps}} | JMP a16 | PC <- a16 | {{noflags}} | [JMP](#jmp)
+C4 {2} {3} | {{jumps}} | CNZ a16 | если не Z, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+C5 | {{mov16}} | PUSH B | PUSH(BC) | {{noflags}} | [PUSH/POP](#push-pop)
+C6 {2} | {{alu8}} | ADI d8 | A <- A + {2} | Z, S, P, CY, AC | [ADD](#add)
+C7 | {{jumps}} | RST 0 | PUSH(PC) и PC <- 0x0000 | {{noflags}} | [RST](#rst)
+C8 | {{jumps}} | RZ | если Z, PC <- POP() | {{noflags}} | [RET](#ret)
+C9 | {{jumps}} | RET | PC <- POP() | {{noflags}} | [RET](#ret)
+CA {2} {3} | {{jumps}} | JZ a16 | если Z, PC <- a16 | {{noflags}} | [JMP](#jmp)
+CB {2} {3} | {{danger}} | {JMP a16} | !!! |  [Неопределенные инструкции](#неопределенные-инструкции)
+CC {2} {3} | {{jumps}} | CZ a16 | если Z, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+CD {2} {3} | {{jumps}} | CALL a16 | PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+CE {2} | {{alu8}} | ACI d8 | A <- A + {2} + CY | Z, S, P, CY, AC | [Immediate-арифметика](#immediate-арифметика)
+CF | {{jumps}} | RST 1 | PUSH(PC) и PC <- 0x0008 | {{noflags}} | [RST](#rst)
+D0 | {{jumps}} | RNC | если не CY, PC <- POP() | {{noflags}} | [RET](#ret)
+D1 | {{ mov16 }} | POP D | DE <- POP() | {{noflags}} | [PUSH/POP](#push-pop)
+D2 {2} {3} | {{jumps}} | JNC a16 | если не CY, PC <- a16 | {{noflags}} | [JMP](#jmp)
+D3 {2} | {{control}} | OUT d8 | если не CY, выводим A в порт {2} | {{noflags}} | [IN/OUT](#in-out)
+D4 {2} {3} | {{jumps}} | CNC a16 | если не CY, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+D5 | {{mov16}} | PUSH D | PUSH(DE) | {{noflags}} | [PUSH/POP](#push-pop)
+D6 {2} | {{alu8}} | SUI d8 | A <- A - {2} | Z, S, P, CY, AC | [Immmediate-арифметика](#immediate-арифметика)
+D7 | {{jumps}} | RST 2 | PUSH(PC) и PC <- 0x0010 | {{noflags}} | [RST](#rst)
+D8 | {{jumps}} | RC | если не CY, PC <- POP() | {{noflags}} | [RET](#ret)
+D9 | {{danger}} | {RET} | !!! | [Неопределенные инструкции](#неопределенные-инструкции)
+DA {2} {3} | {{jumps}} | JC a16 | если CY, PC <- a16 | {{noflags}} | [JMP](#jmp)
+DB {2} {3} | {{control}} | IN d8 | считываем значение в A из порта {2} | {{noflags}} | [IN/OUT](#in-out)
+DC {2} {3} | {{jumps}} | CC a16 | если CY, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+DD {2} {3} | {{danger}} | {CALL d16} | !!! | [Неопределенные инструкции](#неопределенные-инструкции)
+DE {2} | {{alu8}} | SBI d8 | A <- A - {2} - CY | Z, S, P, CY, AC | [Immediate-арифметика](#immediate-арифметика)
+DF | {{jumps}} | RST 3 | PUSH(PC) и PC <- 0x0018 | {{noflags}} | [RST](#rst)
+E0 {2} {3} | {{jumps}} | RPO | если не P, PC <- POP() | {{noflags}} | [RET](#ret)
+E1 | {{ mov16 }} | POP H | HL <- POP() | {{noflags}} | [PUSH/POP](#push-pop)
+E2 {2} {3} | {{jumps}} | JPO a16 | если не P, PC <- a16 | {{noflags}} | [JMP](#jmp)
+E3 {2} {3} | {{ mov16 }} | XTHL | tmp1 <- (SP); tmp2 <- (SP+1); (SP) <- L; (SP+1) <- H; H <- tmp1; L <- tmp2 | {{noflags}} | [XTHL](#xthl)
+E4 {2} {3} | {{jumps}} | CPO a16 | если не P, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+E5 | {{mov16}} | PUSH H | PUSH(HL) | {{noflags}} | [PUSH/POP](#push-pop)
+E6 {2} | {{alu8}} | ANI d8 | A <- A & {2} | Z, S, P, CY, AC | [Immediate-арифметика](#immediate-арифметика)
+E7 | {{jumps}} | RST 4 | PUSH(PC) и PC <- 0x0020 | {{noflags}} | [RST](#rst)
+E8 | {{jumps}} | RPE | если P, PC <- POP() | {{noflags}} | [RET](#ret)
+E9 | {{jumps}} | PCHL | PC <- HL {JMP HL} | {{noflags}} | [JMP](#jmp)
+EA {2} {3} | {{jumps}} | JPE a16 | если P, PC <- a16 | {{noflags}} | [JMP](#jmp)
+EB {2} {3} | {{ mov16 }} | XCHG | tmp <- DE; DE <- HL; HL <- tmp | {{noflags}} | [XCHG](#xchg)
+EC {2} {3} | {{jumps}} | CPE a16 | если P, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+ED {2} {3} | {{danger}} | {CALL d16} | !!! | [Неопределенные инструкции](#неопределенные-инструкции)
+EE {2} | {{alu8}} | XRI d8 | A <- A ^ {2} | Z, S, P, CY, AC | [Immediate-арифметика](#immediate-арифметика)
+EF | {{jumps}} | RST 5 | PUSH(PC) и PC <- 0x0028 | {{noflags}} | [RST](#rst)
+F0 {2} {3} | {{jumps}} | RP | если не S, PC <- POP() | {{noflags}} | [RET](#ret)
+F1 | {{ mov16 }} | POP PSW | AF <- POP() | Z, S, P, CY, AC | [PUSH/POP](#push-pop)
+F2 {2} {3} | {{jumps}} | JP a16 | если не S, PC <- a16 | {{noflags}} | [JMP](#jmp)
+F3 {2} {3} | {{control}} | DI | выключаем систему прирываний (INTE <- 0) | {{noflags}} | [DI/EI](#di-ei)
+F4 {2} {3} | {{jumps}} | CP a16 | если не S, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+F5 | {{ mov16 }} | PUSH PSW | PUSH(AF) | {{noflags}} | [PUSH/POP](#push-pop)
+F6 {2} | {{alu8}} | ORI d8 | A <- A \| {2} | Z, S, P, CY, AC | [Immediate-арифметика](#immediate-арифметика)
+F7 | {{jumps}} | RST 6 | PUSH(PC) и PC <- 0x0030 | {{noflags}} | [RST](#rst)
+F8 {2} {3} | {{jumps}} | RM | если не S, PC <- POP() | {{noflags}} | [RET](#ret)
+F9 | {{ mov16 }} | SPHL | SP <- HL | {{noflags}} | [PUSH/POP](#push-pop)
+FA {2} {3} | {{jumps}} | JM a16 | если S, PC <- a16 | {{noflags}} | [JMP](#jmp)
+FB {2} {3} | {{control}} | EI | включаем систему прирываний (INTE <- 1) | {{noflags}} | [DI/EI](#di-ei)
+FC {2} {3} | {{jumps}} | CM a16 | если S, PUSH(PC) и PC <- a16 | {{noflags}} | [CALL](#call)
+FD {2} {3} | {{danger}} | {CALL d16} | !!! | [Неопределенные инструкции](#неопределенные-инструкции)
+FE {2} | {{alu8}} | CPI d8 | &empty; <- A - {2} | Z, S, P, CY, AC | [Immediate-арифметика](#immediate-арифметика)
+FF | {{jumps}} | RST 7 | PUSH(PC) и PC <- 0x0038 | {{noflags}} | [RST](#rst)
