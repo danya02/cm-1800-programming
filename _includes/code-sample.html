@@ -1,1 +1,4 @@
-{% include _includes/collapse.html summary='Пример использования' content=include.content %}
+<details markdown="0">
+    <summary markdown="0">Пример использования</summary>
+    <div markdown="0">{{ include.content|markdownify }}</div>
+</details>
