@@ -27,3 +27,42 @@ details h1, details h2, details h3 {
 }
 
 @import "minima/callout";
+
+
+// Heading links, from https://remarkablemark.org/blog/2020/04/04/jekyll-heading-anchor-links/
+.post-content {
+    .header-link-anchor {
+        path {
+            visibility: hidden;
+        }
+    }
+    .header-link-anchor {
+        //visibility: hidden;
+        float: left;
+        padding-right: 4px;
+        margin-left: -16px;
+        margin-top: 4px;
+        line-height: 1;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+
+
+
+        svg {
+            fill: white;
+        }
+
+        &:active, &:focus, &:hover {
+            .header-link-anchor {
+                path {
+                    visibility: visible;
+                }
+            }
+        }
+
+        > a {
+            color: inherit;
+        }
+    }
+  }
