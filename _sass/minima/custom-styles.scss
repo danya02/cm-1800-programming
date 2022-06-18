@@ -12,6 +12,15 @@
     float: left
 }
 
+.PageNavigation .prev::before {
+    content: "\2190 "
+}
+
+.PageNavigation .next::after {
+    content: " \2192"
+}
+
+
 .PageNavigation .next {
     float: right
 }
