@@ -68,7 +68,7 @@ layout: default
   
   <br>
   
-  <div class="donate">
+  <div id="donate" class="donate">
     <p id="donate-req">Если вам помогла эта статья, вы можете поддержать автора:</p>
 
   {%- include my-yoomoney-donate.html -%}
@@ -77,6 +77,12 @@ layout: default
     let params = new URLSearchParams(window.location.search);
     
     if(params.get("donated") == "success"){
+
+      // Remove all query parameters from the current URL
+      let url = new URL(window.location.href);
+      url.search = '';
+      window.history.replaceState({}, '', url.href);
+
       let donatedCount = parseInt(localStorage.getItem("donatedCount")) || 0;
       localStorage.setItem("donatedCount", donatedCount + 1);
       if(donatedCount == 0){
