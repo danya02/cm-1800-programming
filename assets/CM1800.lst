@@ -1,0 +1,1586 @@
+				;
+				;	Disassembled by:
+				;		DASMx object code disassembler
+				;		(c) Copyright 1996-1999   Conquest Consultants
+				;		Version 1.30 (Oct  6 1999)
+				;
+				;	File:		CM1800.rom
+				;
+				;	Size:		2048 bytes
+				;	Checksum:	6C97
+				;	CRC-32:		85D71D25
+				;
+				;	Date:		Mon Jun 20 21:16:47 2022
+				;
+				;	CPU:		Zilog Z80 (Z80 family)
+				;
+				;
+				;
+					org	00000H
+				;
+0000 : 31 E0 0B 	"1  "		ld	sp,X0BE0
+0003 : F5 		" "		push	af
+0004 : FB 		" "		ei
+0005 : C3 3B 00 	" ; "		jp	L003B
+				;
+0008 : F5 		" "		push	af
+0009 : 3E 01 		"> "		ld	a,001H
+000B : C3 EB 0B 	"   "		jp	L0BEB
+				;
+000E : 00 		" "		nop
+000F : 00 		" "		nop
+0010 : F5 		" "		push	af
+0011 : 3E 02 		"> "		ld	a,002H
+0013 : C3 EE 0B 	"   "		jp	L0BEE
+				;
+0016 : 00 		" "		nop
+0017 : 00 		" "		nop
+0018 : F5 		" "		push	af
+0019 : 3E 03 		"> "		ld	a,003H
+001B : C3 F1 0B 	"   "		jp	L0BF1
+				;
+001E : 00 		" "		nop
+001F : 00 		" "		nop
+0020 : F5 		" "		push	af
+0021 : 3E 04 		"> "		ld	a,004H
+0023 : C3 F4 0B 	"   "		jp	L0BF4
+				;
+0026 : 00 		" "		nop
+0027 : 00 		" "		nop
+0028 : F5 		" "		push	af
+0029 : 3E 05 		"> "		ld	a,005H
+002B : C3 F7 0B 	"   "		jp	L0BF7
+				;
+002E : 00 		" "		nop
+002F : 00 		" "		nop
+0030 : E3 		" "		ex	(sp),hl
+0031 : 2B 		"+"		dec	hl
+0032 : E3 		" "		ex	(sp),hl
+0033 : C3 2B 01 	" + "		jp	L012B
+				;
+0036 : 00 		" "		nop
+0037 : 00 		" "		nop
+0038				L0038:
+0038 : C3 00 10 	"   "		jp	L1000
+				;
+003B				L003B:
+003B : 3E 08 		"> "		ld	a,008H
+003D : C3 CF 00 	"   "		jp	L00CF
+0040 : C3 2B 01 	" + "		jp	L012B
+0043 : C3 26 01 	" & "		jp	L0126
+0046				L0046:
+0046 : C3 FA 0B 	"   "		jp	L0BFA
+0049 : C3 C5 02 	"   "		jp	L02C5
+004C : C3 B1 02 	"   "		jp	L02B1
+004F : C3 C2 02 	"   "		jp	L02C2
+0052 : C3 B4 01 	"   "		jp	L01B4
+0055 : C3 BD 01 	"   "		jp	L01BD
+0058				L0058:
+0058 : C3 FD 0B 	"   "		jp	L0BFD
+005B : C3 00 06 	"   "		jp	L0600
+005E : C3 E9 04 	"   "		jp	L04E9
+0061 : C3 D2 02 	"   "		jp	L02D2
+0064 : C3 EC 02 	"   "		jp	L02EC
+0067 : C3 84 02 	"   "		jp	L0284
+006A : C3 A6 02 	"   "		jp	L02A6
+006D : C3 08 03 	"   "		jp	L0308
+0070 : C3 77 06 	" w "		jp	L0677
+0073 : C3 85 06 	"   "		jp	L0685
+0076 : C3 8E 06 	"   "		jp	L068E
+0079 : C3 97 06 	"   "		jp	L0697
+				;
+007C : 97 		" "		sub	a
+007D : C9 		" "		ret
+				;
+007E : 00 		" "		nop
+007F : 97 		" "		sub	a
+0080 : C9 		" "		ret
+				;
+0081 : 00 		" "		nop
+0082 : C3 9D 06 	"   "		jp	L069D
+0085 : C3 B0 06 	"   "		jp	L06B0
+0088 : C3 B6 03 	"   "		jp	L03B6
+008B : C3 67 02 	" g "		jp	L0267
+008E : C3 38 05 	" 8 "		jp	L0538
+0091 : C3 5B 05 	" [ "		jp	L055B
+0094 : C3 9E 05 	"   "		jp	L059E
+0097 : C3 E1 03 	"   "		jp	L03E1
+				;
+009A : 0D 		" "		dec	c
+009B : 0A 		" "		ld	a,(bc)
+009C : 4D 		"M"		ld	c,l
+009D : 4F 		"O"		ld	c,a
+009E : 4E 		"N"		ld	c,(hl)
+009F : 49 		"I"		ld	c,c
+00A0 : 44 		"D"		ld	b,h
+00A1 : 20 31 		" 1"		jr	nz,L00D4
+00A3 : 2E 33 		".3"		ld	l,033H
+00A5 : 00 		" "		nop
+00A6 : 0D 		" "		dec	c
+00A7 : 0A 		" "		ld	a,(bc)
+00A8 : 45 		"E"		ld	b,l
+00A9 : 52 		"R"		ld	d,d
+00AA : 52 		"R"		ld	d,d
+00AB : 4F 		"O"		ld	c,a
+00AC : 52 		"R"		ld	d,d
+00AD : 20 00 		"  "		jr	nz,L00AF
+00AF				L00AF:
+00AF : 00 		" "		nop
+00B0 : 01 02 03 	"   "		ld	bc,00302H
+00B3 : 40 		"@"		ld	b,b
+00B4 : 05 		" "		dec	b
+00B5 : 06 07 		"  "		ld	b,007H
+00B7 : C4 09 0A 	"   "		call	nz,L0A09
+00BA : C2 0C 0D 	"   "		jp	nz,L0D0C
+00BD : 43 		"C"		ld	b,e
+00BE : 43 		"C"		ld	b,e
+00BF : D9 		" "		exx
+00C0 : CB CA 		"  "		set	1,d
+00C2 : 13 		" "		inc	de
+00C3 : 14 		" "		inc	d
+00C4 : 15 		" "		dec	d
+00C5 : 16 17 		"  "		ld	d,017H
+00C7 : C3 C5 1A 	"   "		jp	L1AC5
+				;
+00CA : 1B 		" "		dec	de
+00CB : C1 		" "		pop	bc
+00CC : C8 		" "		ret	z
+00CD : 1E 1F 		"  "		ld	e,01FH
+00CF				L00CF:
+00CF : D3 03 		"  "		out	(003H),a
+00D1 : 3E 48 		">H"		ld	a,048H
+				;
+00D3 : D3 		" "		db	0D3H
+00D4				L00D4:
+00D4 : 03 		" "		db	003H
+				;
+00D5 : F3 		" "		di
+00D6 : F1 		" "		pop	af
+00D7 : E5 		" "		push	hl
+00D8 : 21 00 00 	"!  "		ld	hl,00000H
+00DB : 22 E4 0B 	""  "		ld	(X0BE4),hl
+00DE : E3 		" "		ex	(sp),hl
+00DF : CD BB 03 	"   "		call	L03BB
+00E2 : 21 EB 0B 	"!  "		ld	hl,L0BEB
+00E5 : 3E C3 		"> "		ld	a,0C3H
+00E7 : 01 21 01 	" ! "		ld	bc,00121H
+00EA : 16 07 		"  "		ld	d,007H
+00EC				L00EC:
+00EC : 77 		"w"		ld	(hl),a
+00ED : 23 		"#"		inc	hl
+00EE : 71 		"q"		ld	(hl),c
+00EF : 23 		"#"		inc	hl
+00F0 : 70 		"p"		ld	(hl),b
+00F1 : 23 		"#"		inc	hl
+00F2 : 15 		" "		dec	d
+00F3 : C2 EC 00 	"   "		jp	nz,L00EC
+00F6 : 21 DC 07 	"!  "		ld	hl,007DCH
+00F9 : 22 EF 0B 	""  "		ld	(X0BEF),hl
+00FC : 21 85 01 	"!  "		ld	hl,00185H
+00FF : 22 FB 0B 	""  "		ld	(X0BFB),hl
+0102 : 21 C4 01 	"!  "		ld	hl,001C4H
+0105 : 22 FE 0B 	""  "		ld	(X0BFE),hl
+0108 : C3 2E 01 	" . "		jp	L012E
+				;
+010B				L010B:
+010B : CD 54 02 	" T "		call	L0254
+010E : 97 		" "		sub	a
+010F				L010F:
+010F : CD 15 01 	"   "		call	L0115
+0112 : C3 34 01 	" 4 "		jp	L0134
+				;
+0115				L0115:
+0115 : C5 		" "		push	bc
+0116 : 01 A6 00 	"   "		ld	bc,000A6H
+0119 : CD B1 02 	"   "		call	L02B1
+011C : CD D2 02 	"   "		call	L02D2
+011F : C1 		" "		pop	bc
+0120 : C9 		" "		ret
+				;
+0121 : C6 10 		"  "		add	a,010H
+0123 : C3 27 01 	" ' "		jp	L0127
+				;
+0126				L0126:
+0126 : F5 		" "		push	af
+0127				L0127:
+0127 : CD 15 01 	"   "		call	L0115
+012A : F1 		" "		pop	af
+012B				L012B:
+012B : CD BB 03 	"   "		call	L03BB
+012E				L012E:
+012E : 01 9A 00 	"   "		ld	bc,0009AH
+0131 : CD B1 02 	"   "		call	L02B1
+0134				L0134:
+0134 : CD C5 02 	"   "		call	L02C5
+0137				L0137:
+0137 : 3E 3F 		">?"		ld	a,03FH
+0139 : CD 58 00 	" X "		call	L0058
+013C : 2A E2 0B 	"*  "		ld	hl,(X0BE2)
+013F : F9 		" "		ld	sp,hl
+0140 : CD BD 01 	"   "		call	L01BD
+0143 : 4F 		"O"		ld	c,a
+0144 : 21 5B 01 	"![ "		ld	hl,0015BH
+0147				L0147:
+0147 : 7E 		"~"		ld	a,(hl)
+0148 : B7 		" "		or	a
+0149 : CA 0B 01 	"   "		jp	z,L010B
+014C : 23 		"#"		inc	hl
+014D : 5E 		"^"		ld	e,(hl)
+014E : 23 		"#"		inc	hl
+014F : 56 		"V"		ld	d,(hl)
+0150 : 23 		"#"		inc	hl
+0151 : B9 		" "		cp	c
+0152 : C2 47 01 	" G "		jp	nz,L0147
+0155 : 21 34 01 	"!4 "		ld	hl,L0134
+0158 : E5 		" "		push	hl
+0159 : EB 		" "		ex	de,hl
+015A : E9 		" "		jp	(hl)		;INFO: index jump
+				;
+015B : 43 		"C"		ld	b,e
+015C : 58 		"X"		ld	e,b
+015D : 05 		" "		dec	b
+015E : 44 		"D"		ld	b,h
+015F : E6 04 		"  "		and	004H
+0161 : 46 		"F"		ld	b,(hl)
+0162 : 92 		" "		sub	d
+0163 : 05 		" "		dec	b
+0164 : 47 		"G"		ld	b,a
+0165 : 76 		"v"		halt
+0166 : 04 		" "		inc	b
+0167 : 49 		"I"		ld	c,c
+0168 : 66 		"f"		ld	h,(hl)
+0169 : 06 4C 		" L"		ld	b,04CH
+016B : FE 03 		"  "		cp	003H
+016D : 4D 		"M"		ld	c,l
+016E : 35 		"5"		dec	(hl)
+016F : 05 		" "		dec	b
+0170 : 53 		"S"		ld	d,e
+0171 : B9 		" "		cp	c
+0172 : 04 		" "		inc	b
+0173 : 54 		"T"		ld	d,h
+0174 : 59 		"Y"		ld	e,c
+0175 : 06 58 		" X"		ld	b,058H
+0177 : AE 		" "		xor	(hl)
+0178 : 05 		" "		dec	b
+0179 : 0D 		" "		dec	c
+017A : 34 		"4"		inc	(hl)
+				;
+017B : 01 		" "		db	001H
+				;
+017C : 00 		" "		nop
+017D				L017D:
+017D : DB 01 		"  "		in	a,(001H)
+017F : E6 01 		"  "		and	001H
+0181 : C8 		" "		ret	z
+0182 : DB 00 		"  "		in	a,(000H)
+0184 : C9 		" "		ret
+				;
+0185 : CD 7D 01 	" } "		call	L017D
+0188 : C8 		" "		ret	z
+0189 : FE 20 		"  "		cp	020H
+018B : DA 90 01 	"   "		jp	c,L0190
+018E : B7 		" "		or	a
+018F : C9 		" "		ret
+				;
+0190				L0190:
+0190 : E5 		" "		push	hl
+0191 : FE 1B 		"  "		cp	01BH
+0193 : C2 9E 01 	"   "		jp	nz,L019E
+0196				L0196:
+0196 : CD 7D 01 	" } "		call	L017D
+0199 : CA 96 01 	"   "		jp	z,L0196
+019C : F6 80 		"  "		or	080H
+019E				L019E:
+019E : C5 		" "		push	bc
+019F : 01 7F 20 	"   "		ld	bc,0207FH
+01A2 : 21 CF 00 	"!  "		ld	hl,L00CF
+01A5				L01A5:
+01A5 : 2B 		"+"		dec	hl
+01A6 : 05 		" "		dec	b
+01A7 : FA AF 01 	"   "		jp	m,L01AF
+01AA : BE 		" "		cp	(hl)
+01AB : C2 A5 01 	"   "		jp	nz,L01A5
+01AE : 78 		"x"		ld	a,b
+01AF				L01AF:
+01AF : A1 		" "		and	c
+01B0 : 0C 		" "		inc	c
+01B1 : C1 		" "		pop	bc
+01B2 : E1 		" "		pop	hl
+01B3 : C9 		" "		ret
+				;
+01B4				L01B4:
+01B4 : CD 46 00 	" F "		call	L0046
+01B7 : CA B4 01 	"   "		jp	z,L01B4
+01BA : E6 7F 		"  "		and	07FH
+01BC : C9 		" "		ret
+				;
+01BD				L01BD:
+01BD : CD B4 01 	"   "		call	L01B4
+01C0 : CD 58 00 	" X "		call	L0058
+01C3 : C9 		" "		ret
+				;
+01C4 : F5 		" "		push	af
+01C5 : FE 20 		"  "		cp	020H
+01C7 : D2 F1 01 	"   "		jp	nc,L01F1
+01CA : E5 		" "		push	hl
+01CB : D5 		" "		push	de
+01CC				L01CC:
+01CC : 21 AF 00 	"!  "		ld	hl,L00AF
+01CF : 16 00 		"  "		ld	d,000H
+01D1 : 5F 		"_"		ld	e,a
+01D2 : 19 		" "		add	hl,de
+01D3 : 3E C0 		"> "		ld	a,0C0H
+01D5 : A6 		" "		and	(hl)
+01D6 : CA E1 01 	"   "		jp	z,L01E1
+01D9 : F2 22 02 	" " "		jp	p,L0222
+01DC : 3E 1B 		"> "		ld	a,01BH
+01DE : CD F6 01 	"   "		call	L01F6
+01E1				L01E1:
+01E1 : D1 		" "		pop	de
+01E2 : 3E 7F 		"> "		ld	a,07FH
+01E4 : A6 		" "		and	(hl)
+01E5 : FE 59 		" Y"		cp	059H
+01E7 : C2 F0 01 	"   "		jp	nz,L01F0
+01EA : 21 3F 02 	"!? "		ld	hl,0023FH
+01ED				L01ED:
+01ED : 22 FE 0B 	""  "		ld	(X0BFE),hl
+01F0				L01F0:
+01F0 : E1 		" "		pop	hl
+01F1				L01F1:
+01F1 : CD F6 01 	"   "		call	L01F6
+01F4 : F1 		" "		pop	af
+01F5 : C9 		" "		ret
+				;
+01F6				L01F6:
+01F6 : F5 		" "		push	af
+01F7				L01F7:
+01F7 : DB 01 		"  "		in	a,(001H)
+01F9 : E6 04 		"  "		and	004H
+01FB : CA F7 01 	"   "		jp	z,L01F7
+01FE : F1 		" "		pop	af
+01FF : C5 		" "		push	bc
+0200 : 4F 		"O"		ld	c,a
+0201 : D3 00 		"  "		out	(000H),a
+0203 : 3A EA 0B 	":  "		ld	a,(X0BEA)
+0206 : FE 1B 		"  "		cp	01BH
+0208 : C5 		" "		push	bc
+0209 : 06 03 		"  "		ld	b,003H
+020B : CC 15 02 	"   "		call	z,L0215
+020E : C1 		" "		pop	bc
+020F : 79 		"y"		ld	a,c
+0210 : 32 EA 0B 	"2  "		ld	(X0BEA),a
+0213 : C1 		" "		pop	bc
+0214 : C9 		" "		ret
+				;
+0215				L0215:
+0215 : C5 		" "		push	bc
+0216				L0216:
+0216 : 0E 41 		" A"		ld	c,041H
+0218				L0218:
+0218 : 0D 		" "		dec	c
+0219 : C2 18 02 	"   "		jp	nz,L0218
+021C : 05 		" "		dec	b
+021D : C2 16 02 	"   "		jp	nz,L0216
+0220 : C1 		" "		pop	bc
+0221 : C9 		" "		ret
+				;
+0222				L0222:
+0222 : 3E 3F 		">?"		ld	a,03FH
+0224 : A6 		" "		and	(hl)
+0225 : 21 2B 02 	"!+ "		ld	hl,0022BH
+0228 : 5F 		"_"		ld	e,a
+0229 : 19 		" "		add	hl,de
+022A : E9 		" "		jp	(hl)		;INFO: index jump
+022B : C3 31 02 	" 1 "		jp	L0231
+022E : C3 3B 02 	" ; "		jp	L023B
+				;
+0231				L0231:
+0231 : 3E 0D 		"> "		ld	a,00DH
+0233 : CD F6 01 	"   "		call	L01F6
+0236 : 3E 11 		"> "		ld	a,011H
+0238 : C3 CC 01 	"   "		jp	L01CC
+				;
+023B				L023B:
+023B : AF 		" "		xor	a
+023C : C3 CC 01 	"   "		jp	L01CC
+				;
+023F : F5 		" "		push	af
+0240 : E5 		" "		push	hl
+0241 : 21 47 02 	"!G "		ld	hl,00247H
+0244 : C3 4C 02 	" L "		jp	L024C
+				;
+0247 : F5 		" "		push	af
+0248 : E5 		" "		push	hl
+0249 : 21 C4 01 	"!  "		ld	hl,001C4H
+024C				L024C:
+024C : C6 20 		"  "		add	a,020H
+024E : C3 ED 01 	"   "		jp	L01ED
+				;
+0251				L0251:
+0251 : CD BD 01 	"   "		call	L01BD
+0254				L0254:
+0254 : FE 7F 		"  "		cp	07FH
+0256 : C0 		" "		ret	nz
+0257 : C3 34 01 	" 4 "		jp	L0134
+				;
+025A				L025A:
+025A : 3E 2F 		">/"		ld	a,02FH
+025C : C3 58 00 	" X "		jp	L0058
+				;
+025F				L025F:
+025F : 3E 20 		"> "		ld	a,020H
+0261 : C3 58 00 	" X "		jp	L0058
+				;
+0264				L0264:
+0264 : CD BD 01 	"   "		call	L01BD
+0267				L0267:
+0267 : C5 		" "		push	bc
+0268 : 4F 		"O"		ld	c,a
+0269 : D6 30 		" 0"		sub	030H
+026B : DA 81 02 	"   "		jp	c,L0281
+026E : C6 E9 		"  "		add	a,0E9H
+0270 : DA 81 02 	"   "		jp	c,L0281
+0273 : C6 06 		"  "		add	a,006H
+0275 : F2 7D 02 	" } "		jp	p,L027D
+0278 : C6 07 		"  "		add	a,007H
+027A : DA 81 02 	"   "		jp	c,L0281
+027D				L027D:
+027D : C6 0A 		"  "		add	a,00AH
+027F : B7 		" "		or	a
+0280 : 4F 		"O"		ld	c,a
+0281				L0281:
+0281 : 79 		"y"		ld	a,c
+0282 : C1 		" "		pop	bc
+0283 : C9 		" "		ret
+				;
+0284				L0284:
+0284 : CD 64 02 	" d "		call	L0264
+0287				L0287:
+0287 : D8 		" "		ret	c
+0288 : C5 		" "		push	bc
+0289 : 07 		" "		rlca
+028A : 07 		" "		rlca
+028B : 07 		" "		rlca
+028C : 07 		" "		rlca
+028D : E6 F0 		"  "		and	0F0H
+028F : 47 		"G"		ld	b,a
+0290 : CD 64 02 	" d "		call	L0264
+0293 : DA 97 02 	"   "		jp	c,L0297
+0296 : B0 		" "		or	b
+0297				L0297:
+0297 : C1 		" "		pop	bc
+0298 : C9 		" "		ret
+				;
+0299				L0299:
+0299 : CD A6 02 	"   "		call	L02A6
+029C : D0 		" "		ret	nc
+029D : C3 0B 01 	"   "		jp	L010B
+				;
+02A0				L02A0:
+02A0 : CD 87 02 	"   "		call	L0287
+02A3 : C3 A9 02 	"   "		jp	L02A9
+				;
+02A6				L02A6:
+02A6 : CD 84 02 	"   "		call	L0284
+02A9				L02A9:
+02A9 : D8 		" "		ret	c
+02AA : 47 		"G"		ld	b,a
+02AB : CD 84 02 	"   "		call	L0284
+02AE : D8 		" "		ret	c
+02AF : 4F 		"O"		ld	c,a
+02B0 : C9 		" "		ret
+				;
+02B1				L02B1:
+02B1 : F5 		" "		push	af
+02B2 : C5 		" "		push	bc
+02B3				L02B3:
+02B3 : 0A 		" "		ld	a,(bc)
+02B4 : B7 		" "		or	a
+02B5 : CA BF 02 	"   "		jp	z,L02BF
+02B8 : CD 58 00 	" X "		call	L0058
+02BB : 03 		" "		inc	bc
+02BC : C3 B3 02 	"   "		jp	L02B3
+				;
+02BF				L02BF:
+02BF : C1 		" "		pop	bc
+02C0 : F1 		" "		pop	af
+02C1 : C9 		" "		ret
+				;
+02C2				L02C2:
+02C2 : CD B1 02 	"   "		call	L02B1
+02C5				L02C5:
+02C5 : F5 		" "		push	af
+02C6 : 3E 0D 		"> "		ld	a,00DH
+02C8 : CD 58 00 	" X "		call	L0058
+02CB : 3E 0A 		"> "		ld	a,00AH
+02CD : CD 58 00 	" X "		call	L0058
+02D0 : F1 		" "		pop	af
+02D1 : C9 		" "		ret
+				;
+02D2				L02D2:
+02D2 : F5 		" "		push	af
+02D3 : 0F 		" "		rrca
+02D4 : 0F 		" "		rrca
+02D5 : 0F 		" "		rrca
+02D6 : 0F 		" "		rrca
+02D7 : CD E1 02 	"   "		call	L02E1
+02DA : F1 		" "		pop	af
+02DB : F5 		" "		push	af
+02DC : CD E1 02 	"   "		call	L02E1
+02DF : F1 		" "		pop	af
+02E0 : C9 		" "		ret
+				;
+02E1				L02E1:
+02E1 : E6 0F 		"  "		and	00FH
+02E3 : C6 90 		"  "		add	a,090H
+02E5 : 27 		"'"		daa
+02E6 : CE 40 		" @"		adc	a,040H
+02E8 : 27 		"'"		daa
+02E9 : C3 58 00 	" X "		jp	L0058
+				;
+02EC				L02EC:
+02EC : F5 		" "		push	af
+02ED : 78 		"x"		ld	a,b
+02EE : CD D2 02 	"   "		call	L02D2
+02F1 : 79 		"y"		ld	a,c
+02F2 : CD D2 02 	"   "		call	L02D2
+02F5 : F1 		" "		pop	af
+02F6 : C9 		" "		ret
+				;
+02F7				L02F7:
+02F7 : CD 77 06 	" w "		call	L0677
+02FA : C0 		" "		ret	nz
+02FB : 01 07 00 	"   "		ld	bc,00007H
+02FE : CD AD 03 	"   "		call	L03AD
+0301 : C0 		" "		ret	nz
+0302 : 7E 		"~"		ld	a,(hl)
+0303 : FE 50 		" P"		cp	050H
+0305 : 3E 0A 		"> "		ld	a,00AH
+0307 : C9 		" "		ret
+				;
+0308				L0308:
+0308 : D5 		" "		push	de
+0309 : C5 		" "		push	bc
+030A : 32 E7 0B 	"2  "		ld	(X0BE7),a
+030D : 21 80 FF 	"!  "		ld	hl,0FF80H
+0310 : 39 		"9"		add	hl,sp
+0311 : F9 		" "		ld	sp,hl
+0312 : 22 E8 0B 	""  "		ld	(X0BE8),hl
+0315 : 59 		"Y"		ld	e,c
+0316 : 50 		"P"		ld	d,b
+0317 : CD F7 02 	"   "		call	L02F7
+031A : C2 85 03 	"   "		jp	nz,L0385
+031D				L031D:
+031D : 2A E8 0B 	"*  "		ld	hl,(X0BE8)
+0320 : 0C 		" "		inc	c
+0321 : 79 		"y"		ld	a,c
+0322 : FE 1B 		"  "		cp	01BH
+0324 : 3E 0B 		"> "		ld	a,00BH
+0326 : CA 85 03 	"   "		jp	z,L0385
+0329 : CD AD 03 	"   "		call	L03AD
+032C : C2 85 03 	"   "		jp	nz,L0385
+032F : C5 		" "		push	bc
+0330 : 3E 08 		"> "		ld	a,008H
+0332				L0332:
+0332 : F5 		" "		push	af
+0333 : E5 		" "		push	hl
+0334 : D5 		" "		push	de
+0335 : 06 08 		"  "		ld	b,008H
+0337				L0337:
+0337 : 1A 		" "		ld	a,(de)
+0338 : BE 		" "		cp	(hl)
+0339 : CA 4B 03 	" K "		jp	z,L034B
+033C : D1 		" "		pop	de
+033D : E1 		" "		pop	hl
+033E : 01 10 00 	"   "		ld	bc,00010H
+0341 : 09 		" "		add	hl,bc
+0342 : F1 		" "		pop	af
+0343 : 3D 		"="		dec	a
+0344 : C2 32 03 	" 2 "		jp	nz,L0332
+0347 : C1 		" "		pop	bc
+0348 : C3 1D 03 	"   "		jp	L031D
+				;
+034B				L034B:
+034B : 23 		"#"		inc	hl
+034C : 13 		" "		inc	de
+034D : 05 		" "		dec	b
+034E : C2 37 03 	" 7 "		jp	nz,L0337
+0351 : 46 		"F"		ld	b,(hl)
+0352 : 23 		"#"		inc	hl
+0353 : 4E 		"N"		ld	c,(hl)
+0354 : 23 		"#"		inc	hl
+0355 : 56 		"V"		ld	d,(hl)
+0356 : 23 		"#"		inc	hl
+0357 : 5E 		"^"		ld	e,(hl)
+0358 : 23 		"#"		inc	hl
+0359 : 7E 		"~"		ld	a,(hl)
+035A : 23 		"#"		inc	hl
+035B : EB 		" "		ex	de,hl
+035C : 22 E8 0B 	""  "		ld	(X0BE8),hl
+035F : 21 88 00 	"!  "		ld	hl,00088H
+0362 : 39 		"9"		add	hl,sp
+0363 : F9 		" "		ld	sp,hl
+0364 : EB 		" "		ex	de,hl
+0365 : 56 		"V"		ld	d,(hl)
+0366 : 23 		"#"		inc	hl
+0367 : 5E 		"^"		ld	e,(hl)
+0368 : 23 		"#"		inc	hl
+0369 : 66 		"f"		ld	h,(hl)
+036A : D5 		" "		push	de
+036B : E5 		" "		push	hl
+036C : 2A E8 0B 	"*  "		ld	hl,(X0BE8)
+036F : CD 8E 03 	"   "		call	L038E
+0372 : D1 		" "		pop	de
+0373 : E1 		" "		pop	hl
+0374 : C2 8A 03 	"   "		jp	nz,L038A
+0377 : 7A 		"z"		ld	a,d
+0378 : CD 8E 03 	"   "		call	L038E
+037B : C2 8A 03 	"   "		jp	nz,L038A
+037E : 2A E8 0B 	"*  "		ld	hl,(X0BE8)
+0381 : 97 		" "		sub	a
+0382				L0382:
+0382 : C1 		" "		pop	bc
+0383 : D1 		" "		pop	de
+0384 : C9 		" "		ret
+				;
+0385				L0385:
+0385 : 21 80 00 	"!  "		ld	hl,00080H
+0388 : 39 		"9"		add	hl,sp
+0389 : F9 		" "		ld	sp,hl
+038A				L038A:
+038A : 37 		"7"		scf
+038B : C3 82 03 	"   "		jp	L0382
+				;
+038E				L038E:
+038E : B7 		" "		or	a
+038F : C8 		" "		ret	z
+0390 : 11 80 00 	"   "		ld	de,00080H
+0393				L0393:
+0393 : F5 		" "		push	af
+0394 : CD AD 03 	"   "		call	L03AD
+0397 : CA 9C 03 	"   "		jp	z,L039C
+039A : C1 		" "		pop	bc
+039B : C9 		" "		ret
+				;
+039C				L039C:
+039C : 19 		" "		add	hl,de
+039D : 0C 		" "		inc	c
+039E : 79 		"y"		ld	a,c
+039F : FE 1B 		"  "		cp	01BH
+03A1 : C2 A7 03 	"   "		jp	nz,L03A7
+03A4 : 0E 01 		"  "		ld	c,001H
+03A6 : 04 		" "		inc	b
+03A7				L03A7:
+03A7 : F1 		" "		pop	af
+03A8 : 3D 		"="		dec	a
+03A9 : C2 93 03 	"   "		jp	nz,L0393
+03AC : C9 		" "		ret
+				;
+03AD				L03AD:
+03AD : D5 		" "		push	de
+03AE : 3A E7 0B 	":  "		ld	a,(X0BE7)
+03B1 : CD 9D 06 	"   "		call	L069D
+03B4 : D1 		" "		pop	de
+03B5 : C9 		" "		ret
+				;
+03B6				L03B6:
+03B6 : CD 08 03 	"   "		call	L0308
+03B9 : D8 		" "		ret	c
+03BA : E9 		" "		jp	(hl)		;INFO: index jump
+				;
+03BB				L03BB:
+03BB : E3 		" "		ex	(sp),hl
+03BC : D5 		" "		push	de
+03BD : C5 		" "		push	bc
+03BE : F5 		" "		push	af
+03BF : DB 01 		"  "		in	a,(001H)
+03C1 : F5 		" "		push	af
+03C2 : 3E 00 		"> "		ld	a,000H
+03C4 : D3 01 		"  "		out	(001H),a
+03C6 : E5 		" "		push	hl
+03C7 : 21 02 00 	"!  "		ld	hl,00002H
+03CA : 39 		"9"		add	hl,sp
+03CB : 22 E2 0B 	""  "		ld	(X0BE2),hl
+03CE : 21 0E 00 	"!  "		ld	hl,0000EH
+03D1 : 39 		"9"		add	hl,sp
+03D2 : 22 E0 0B 	""  "		ld	(X0BE0),hl
+03D5 : 2A E4 0B 	"*  "		ld	hl,(X0BE4)
+03D8 : 7E 		"~"		ld	a,(hl)
+03D9 : FE F7 		"  "		cp	0F7H
+03DB : C0 		" "		ret	nz
+03DC : 3A E6 0B 	":  "		ld	a,(X0BE6)
+03DF : 77 		"w"		ld	(hl),a
+03E0 : C9 		" "		ret
+				;
+03E1				L03E1:
+03E1 : E5 		" "		push	hl
+03E2 : F5 		" "		push	af
+03E3 : 21 00 01 	"!  "		ld	hl,00100H
+03E6				L03E6:
+03E6 : DB 23 		" #"		in	a,(023H)
+03E8 : E6 04 		"  "		and	004H
+03EA : C2 F8 03 	"   "		jp	nz,L03F8
+03ED : E5 		" "		push	hl
+03EE : E1 		" "		pop	hl
+03EF : 23 		"#"		inc	hl
+03F0 : BC 		" "		cp	h
+03F1 : C2 E6 03 	"   "		jp	nz,L03E6
+03F4 : F1 		" "		pop	af
+03F5 : E1 		" "		pop	hl
+03F6 : 37 		"7"		scf
+03F7 : C9 		" "		ret
+				;
+03F8				L03F8:
+03F8 : F1 		" "		pop	af
+03F9 : D3 22 		" ""		out	(022H),a
+03FB : E1 		" "		pop	hl
+03FC : B7 		" "		or	a
+03FD : C9 		" "		ret
+				;
+03FE : 11 00 00 	"   "		ld	de,00000H
+0401 : 21 F8 FF 	"!  "		ld	hl,0FFF8H
+0404 : 39 		"9"		add	hl,sp
+0405 : F9 		" "		ld	sp,hl
+0406 : E5 		" "		push	hl
+0407 : 06 08 		"  "		ld	b,008H
+0409 : CD 5F 02 	" _ "		call	L025F
+040C : CD 51 02 	" Q "		call	L0251
+040F : FE 41 		" A"		cp	041H
+0411 : FA 19 04 	"   "		jp	m,L0419
+0414 : FE 5B 		" ["		cp	05BH
+0416 : DA 2A 04 	" * "		jp	c,L042A
+0419				L0419:
+0419 : FE 32 		" 2"		cp	032H
+041B : D2 0B 01 	"   "		jp	nc,L010B
+041E : D6 30 		" 0"		sub	030H
+0420 : DA 0B 01 	"   "		jp	c,L010B
+0423 : 57 		"W"		ld	d,a
+0424 : CD 5A 02 	" Z "		call	L025A
+0427				L0427:
+0427 : CD 51 02 	" Q "		call	L0251
+042A				L042A:
+042A : FE 2F 		" /"		cp	02FH
+042C : CA 67 04 	" g "		jp	z,L0467
+042F : FE 0D 		"  "		cp	00DH
+0431 : CA 67 04 	" g "		jp	z,L0467
+0434 : 77 		"w"		ld	(hl),a
+0435 : 23 		"#"		inc	hl
+0436 : 05 		" "		dec	b
+0437 : C2 27 04 	" ' "		jp	nz,L0427
+043A : CD 5A 02 	" Z "		call	L025A
+043D				L043D:
+043D : CD 51 02 	" Q "		call	L0251
+0440 : 1E 00 		"  "		ld	e,000H
+0442 : FE 0D 		"  "		cp	00DH
+0444 : CA 4D 04 	" M "		jp	z,L044D
+0447 : FE 4E 		" N"		cp	04EH
+0449 : C2 0B 01 	"   "		jp	nz,L010B
+044C : 1C 		" "		inc	e
+044D				L044D:
+044D : CD C5 02 	"   "		call	L02C5
+0450 : 7A 		"z"		ld	a,d
+0451 : C1 		" "		pop	bc
+0452 : CD 08 03 	"   "		call	L0308
+0455 : DA 0F 01 	"   "		jp	c,L010F
+0458 : 31 E0 0B 	"1  "		ld	sp,X0BE0
+045B : E5 		" "		push	hl
+045C : CD BB 03 	"   "		call	L03BB
+045F : 7B 		"{"		ld	a,e
+0460 : B7 		" "		or	a
+0461 : C2 34 01 	" 4 "		jp	nz,L0134
+0464 : C3 AF 04 	"   "		jp	L04AF
+				;
+0467				L0467:
+0467 : 36 20 		"6 "		ld	(hl),020H
+0469 : 23 		"#"		inc	hl
+046A : 05 		" "		dec	b
+046B : C2 67 04 	" g "		jp	nz,L0467
+046E : FE 2F 		" /"		cp	02FH
+0470 : CA 3D 04 	" = "		jp	z,L043D
+0473 : C3 4D 04 	" M "		jp	L044D
+				;
+0476 : CD 64 02 	" d "		call	L0264
+0479 : DA 8C 04 	"   "		jp	c,L048C
+047C : CD A0 02 	"   "		call	L02A0
+047F : DA 0B 01 	"   "		jp	c,L010B
+0482 : 2A E0 0B 	"*  "		ld	hl,(X0BE0)
+0485 : 2B 		"+"		dec	hl
+0486 : 70 		"p"		ld	(hl),b
+0487 : 2B 		"+"		dec	hl
+0488 : 71 		"q"		ld	(hl),c
+0489 : CD BD 01 	"   "		call	L01BD
+048C				L048C:
+048C : FE 2C 		" ,"		cp	02CH
+048E : CA 9C 04 	"   "		jp	z,L049C
+0491 : FE 0D 		"  "		cp	00DH
+0493 : C2 0B 01 	"   "		jp	nz,L010B
+0496 : 21 00 00 	"!  "		ld	hl,00000H
+0499 : C3 A8 04 	"   "		jp	L04A8
+				;
+049C				L049C:
+049C : CD 99 02 	"   "		call	L0299
+049F : 0A 		" "		ld	a,(bc)
+04A0 : 32 E6 0B 	"2  "		ld	(X0BE6),a
+04A3 : 3E F7 		"> "		ld	a,0F7H
+04A5 : 02 		" "		ld	(bc),a
+04A6 : 69 		"i"		ld	l,c
+04A7 : 60 		"`"		ld	h,b
+04A8				L04A8:
+04A8 : 22 E4 0B 	""  "		ld	(X0BE4),hl
+04AB : E1 		" "		pop	hl
+04AC : CD C5 02 	"   "		call	L02C5
+04AF				L04AF:
+04AF : F1 		" "		pop	af
+04B0 : E6 C0 		"  "		and	0C0H
+04B2 : D3 01 		"  "		out	(001H),a
+04B4				L04B4:
+04B4 : F1 		" "		pop	af
+04B5 : C1 		" "		pop	bc
+04B6 : D1 		" "		pop	de
+04B7 : E1 		" "		pop	hl
+04B8 : C9 		" "		ret
+				;
+04B9 : CD 99 02 	"   "		call	L0299
+04BC : CD 5F 02 	" _ "		call	L025F
+04BF				L04BF:
+04BF : 0A 		" "		ld	a,(bc)
+04C0 : CD D2 02 	"   "		call	L02D2
+04C3 : 3E 2D 		">-"		ld	a,02DH
+04C5 : CD 58 00 	" X "		call	L0058
+04C8 : CD 64 02 	" d "		call	L0264
+04CB : DA DC 04 	"   "		jp	c,L04DC
+04CE : CD 87 02 	"   "		call	L0287
+04D1 : DA E1 04 	"   "		jp	c,L04E1
+04D4 : 02 		" "		ld	(bc),a
+04D5 : CD 5F 02 	" _ "		call	L025F
+04D8				L04D8:
+04D8 : 03 		" "		inc	bc
+04D9 : C3 BF 04 	"   "		jp	L04BF
+				;
+04DC				L04DC:
+04DC : FE 20 		"  "		cp	020H
+04DE : CA D8 04 	"   "		jp	z,L04D8
+04E1				L04E1:
+04E1 : 69 		"i"		ld	l,c
+04E2 : 60 		"`"		ld	h,b
+04E3 : C3 E9 04 	"   "		jp	L04E9
+				;
+04E6 : CD 27 05 	" ' "		call	L0527
+04E9				L04E9:
+04E9 : E5 		" "		push	hl
+04EA : D5 		" "		push	de
+04EB : C5 		" "		push	bc
+04EC : F5 		" "		push	af
+04ED : 79 		"y"		ld	a,c
+04EE : E6 0F 		"  "		and	00FH
+04F0 : 2F 		"/"		cpl
+04F1 : C6 11 		"  "		add	a,011H
+04F3 : 57 		"W"		ld	d,a
+04F4				L04F4:
+04F4 : CD C5 02 	"   "		call	L02C5
+04F7 : CD EC 02 	"   "		call	L02EC
+04FA : 3E 3A 		">:"		ld	a,03AH
+04FC : CD 58 00 	" X "		call	L0058
+04FF				L04FF:
+04FF : CD 5F 02 	" _ "		call	L025F
+0502 : 0A 		" "		ld	a,(bc)
+0503 : CD D2 02 	"   "		call	L02D2
+0506 : CD 1B 05 	"   "		call	L051B
+0509 : D2 B4 04 	"   "		jp	nc,L04B4
+050C : 15 		" "		dec	d
+050D : C2 FF 04 	"   "		jp	nz,L04FF
+0510 : CD 46 00 	" F "		call	L0046
+0513 : C2 B4 04 	"   "		jp	nz,L04B4
+0516 : 16 10 		"  "		ld	d,010H
+0518 : C3 F4 04 	"   "		jp	L04F4
+				;
+051B				L051B:
+051B : 78 		"x"		ld	a,b
+051C : 94 		" "		sub	h
+051D : DA 24 05 	" $ "		jp	c,L0524
+0520 : C0 		" "		ret	nz
+0521 : 79 		"y"		ld	a,c
+0522 : 95 		" "		sub	l
+0523 : D0 		" "		ret	nc
+0524				L0524:
+0524 : 03 		" "		inc	bc
+0525 : 37 		"7"		scf
+0526 : C9 		" "		ret
+				;
+0527				L0527:
+0527 : CD 99 02 	"   "		call	L0299
+052A : C5 		" "		push	bc
+052B : CD 5A 02 	" Z "		call	L025A
+052E : CD 99 02 	"   "		call	L0299
+0531 : C5 		" "		push	bc
+0532 : E1 		" "		pop	hl
+0533 : C1 		" "		pop	bc
+0534 : C9 		" "		ret
+				;
+0535 : CD 48 05 	" H "		call	L0548
+0538				L0538:
+0538 : E5 		" "		push	hl
+0539 : D5 		" "		push	de
+053A : C5 		" "		push	bc
+053B : F5 		" "		push	af
+053C				L053C:
+053C : 0A 		" "		ld	a,(bc)
+053D : 12 		" "		ld	(de),a
+053E : 13 		" "		inc	de
+053F : CD 1B 05 	"   "		call	L051B
+0542 : DA 3C 05 	" < "		jp	c,L053C
+0545 : C3 B4 04 	"   "		jp	L04B4
+				;
+0548				L0548:
+0548 : CD 27 05 	" ' "		call	L0527
+054B : 3E 3E 		">>"		ld	a,03EH
+054D : CD 58 00 	" X "		call	L0058
+0550 : C5 		" "		push	bc
+0551 : CD 99 02 	"   "		call	L0299
+0554 : C5 		" "		push	bc
+0555 : D1 		" "		pop	de
+0556 : C1 		" "		pop	bc
+0557 : C9 		" "		ret
+				;
+0558 : CD 48 05 	" H "		call	L0548
+055B				L055B:
+055B : E5 		" "		push	hl
+055C : D5 		" "		push	de
+055D : C5 		" "		push	bc
+055E : F5 		" "		push	af
+055F				L055F:
+055F : 0A 		" "		ld	a,(bc)
+0560 : EB 		" "		ex	de,hl
+0561 : BE 		" "		cp	(hl)
+0562 : CA 6F 05 	" o "		jp	z,L056F
+0565 : CD 80 05 	"   "		call	L0580
+0568 : C5 		" "		push	bc
+0569 : 4D 		"M"		ld	c,l
+056A : 44 		"D"		ld	b,h
+056B : CD 83 05 	"   "		call	L0583
+056E : C1 		" "		pop	bc
+056F				L056F:
+056F : EB 		" "		ex	de,hl
+0570 : 13 		" "		inc	de
+0571 : CD 46 00 	" F "		call	L0046
+0574 : C2 B4 04 	"   "		jp	nz,L04B4
+0577 : CD 1B 05 	"   "		call	L051B
+057A : DA 5F 05 	" _ "		jp	c,L055F
+057D : C3 B4 04 	"   "		jp	L04B4
+				;
+0580				L0580:
+0580 : CD C5 02 	"   "		call	L02C5
+0583				L0583:
+0583 : CD EC 02 	"   "		call	L02EC
+0586 : 3E 3A 		">:"		ld	a,03AH
+0588 : CD 58 00 	" X "		call	L0058
+058B : 0A 		" "		ld	a,(bc)
+058C : CD D2 02 	"   "		call	L02D2
+058F : C3 5F 02 	" _ "		jp	L025F
+				;
+0592 : CD 27 05 	" ' "		call	L0527
+0595 : CD 5F 02 	" _ "		call	L025F
+0598 : CD 84 02 	"   "		call	L0284
+059B : DA 0B 01 	"   "		jp	c,L010B
+059E				L059E:
+059E : E5 		" "		push	hl
+059F : D5 		" "		push	de
+05A0 : C5 		" "		push	bc
+05A1 : F5 		" "		push	af
+05A2 : 5F 		"_"		ld	e,a
+05A3				L05A3:
+05A3 : 7B 		"{"		ld	a,e
+05A4 : 02 		" "		ld	(bc),a
+05A5 : CD 1B 05 	"   "		call	L051B
+05A8 : DA A3 05 	"   "		jp	c,L05A3
+05AB : C3 B4 04 	"   "		jp	L04B4
+				;
+05AE : CD BD 01 	"   "		call	L01BD
+05B1 : FE 58 		" X"		cp	058H
+05B3 : 21 04 00 	"!  "		ld	hl,00004H
+05B6 : 39 		"9"		add	hl,sp
+05B7 : CA 15 06 	"   "		jp	z,L0615
+05BA : 11 F8 05 	"   "		ld	de,005F8H
+05BD : 47 		"G"		ld	b,a
+05BE : 0E 08 		"  "		ld	c,008H
+05C0				L05C0:
+05C0 : 1A 		" "		ld	a,(de)
+05C1 : B8 		" "		cp	b
+05C2 : CA CE 05 	"   "		jp	z,L05CE
+05C5 : 23 		"#"		inc	hl
+05C6 : 13 		" "		inc	de
+05C7 : 0D 		" "		dec	c
+05C8 : C2 C0 05 	"   "		jp	nz,L05C0
+05CB : C3 0B 01 	"   "		jp	L010B
+				;
+05CE				L05CE:
+05CE : CD 5F 02 	" _ "		call	L025F
+05D1 : 7E 		"~"		ld	a,(hl)
+05D2 : CD D2 02 	"   "		call	L02D2
+05D5 : 3E 2D 		">-"		ld	a,02DH
+05D7 : CD 58 00 	" X "		call	L0058
+05DA : CD 64 02 	" d "		call	L0264
+05DD : D2 EB 05 	"   "		jp	nc,L05EB
+05E0 : FE 20 		"  "		cp	020H
+05E2 : CA 37 01 	" 7 "		jp	z,L0137
+05E5 : FE 0D 		"  "		cp	00DH
+05E7 : C8 		" "		ret	z
+05E8 : C3 0B 01 	"   "		jp	L010B
+				;
+05EB				L05EB:
+05EB : CD 87 02 	"   "		call	L0287
+05EE : DA 0B 01 	"   "		jp	c,L010B
+05F1 : 77 		"w"		ld	(hl),a
+05F2 : CD 5F 02 	" _ "		call	L025F
+05F5 : C3 37 01 	" 7 "		jp	L0137
+				;
+05F8 : 46 		"F"		ld	b,(hl)
+05F9 : 41 		"A"		ld	b,c
+05FA : 43 		"C"		ld	b,e
+05FB : 42 		"B"		ld	b,d
+05FC : 45 		"E"		ld	b,l
+05FD : 44 		"D"		ld	b,h
+05FE : 4C 		"L"		ld	c,h
+05FF : 48 		"H"		ld	c,b
+0600				L0600:
+0600 : E5 		" "		push	hl
+0601 : D5 		" "		push	de
+0602 : C5 		" "		push	bc
+0603 : F5 		" "		push	af
+0604 : 21 0A 00 	"!  "		ld	hl,0000AH
+0607 : 39 		"9"		add	hl,sp
+0608 : 22 E0 0B 	""  "		ld	(X0BE0),hl
+060B : 21 00 00 	"!  "		ld	hl,00000H
+060E : 39 		"9"		add	hl,sp
+060F : CD 15 06 	"   "		call	L0615
+0612 : C3 B4 04 	"   "		jp	L04B4
+				;
+0615				L0615:
+0615 : CD C5 02 	"   "		call	L02C5
+0618 : 11 49 06 	" I "		ld	de,00649H
+061B : CD 5F 02 	" _ "		call	L025F
+061E : 1A 		" "		ld	a,(de)
+061F : 13 		" "		inc	de
+0620 : B7 		" "		or	a
+0621 : F8 		" "		ret	m
+0622 : 01 1B 06 	"   "		ld	bc,0061BH
+0625 : C5 		" "		push	bc
+0626 : CA 45 06 	" E "		jp	z,L0645
+0629 : FE 20 		"  "		cp	020H
+062B : F5 		" "		push	af
+062C : CD 58 00 	" X "		call	L0058
+062F : 1A 		" "		ld	a,(de)
+0630 : 13 		" "		inc	de
+0631 : CD 58 00 	" X "		call	L0058
+0634 : 3E 3D 		">="		ld	a,03DH
+0636 : CD 58 00 	" X "		call	L0058
+0639 : 4E 		"N"		ld	c,(hl)
+063A : 23 		"#"		inc	hl
+063B : F1 		" "		pop	af
+063C : 79 		"y"		ld	a,c
+063D : CA D2 02 	"   "		jp	z,L02D2
+0640 : 46 		"F"		ld	b,(hl)
+0641 : 23 		"#"		inc	hl
+0642 : C3 EC 02 	"   "		jp	L02EC
+				;
+0645				L0645:
+0645 : 21 E0 0B 	"!  "		ld	hl,X0BE0
+0648 : C9 		" "		ret
+				;
+0649 : 20 46 		" F"		jr	nz,L0691
+064B : 20 41 		" A"		jr	nz,L068E
+064D : 42 		"B"		ld	b,d
+064E : 43 		"C"		ld	b,e
+064F : 44 		"D"		ld	b,h
+0650 : 45 		"E"		ld	b,l
+0651 : 48 		"H"		ld	c,b
+0652 : 4C 		"L"		ld	c,h
+0653 : 50 		"P"		ld	d,b
+0654 : 43 		"C"		ld	b,e
+0655 : 00 		" "		nop
+0656 : 53 		"S"		ld	d,e
+0657 : 50 		"P"		ld	d,b
+0658 : FF 		" "		rst	L0038
+0659 : 21 7D 01 	"!} "		ld	hl,L017D
+065C : 22 FB 0B 	""  "		ld	(X0BFB),hl
+065F : 21 F6 01 	"!  "		ld	hl,L01F6
+0662 : 22 FE 0B 	""  "		ld	(X0BFE),hl
+0665 : C9 		" "		ret
+				;
+0666 : CD BD 01 	"   "		call	L01BD
+0669 : FE 45 		" E"		cp	045H
+066B : C2 70 06 	" p "		jp	nz,L0670
+066E : FB 		" "		ei
+066F : C9 		" "		ret
+				;
+0670				L0670:
+0670 : FE 44 		" D"		cp	044H
+0672 : C2 0B 01 	"   "		jp	nz,L010B
+0675 : F3 		" "		di
+0676 : C9 		" "		ret
+				;
+0677				L0677:
+0677 : D5 		" "		push	de
+0678 : E5 		" "		push	hl
+0679 : 21 87 40 	"! @"		ld	hl,04087H
+067C : 11 03 01 	"   "		ld	de,00103H
+067F : CD B6 06 	"   "		call	L06B6
+0682 : E1 		" "		pop	hl
+0683 : D1 		" "		pop	de
+0684 : C9 		" "		ret
+				;
+0685				L0685:
+0685 : E5 		" "		push	hl
+0686 : 23 		"#"		inc	hl
+0687 : 23 		"#"		inc	hl
+0688 : 23 		"#"		inc	hl
+0689 : CD 9D 06 	"   "		call	L069D
+068C : E1 		" "		pop	hl
+068D : C9 		" "		ret
+				;
+068E				L068E:
+068E : E5 		" "		push	hl
+068F : 23 		"#"		inc	hl
+0690 : 23 		"#"		inc	hl
+0691				L0691:
+0691 : 23 		"#"		inc	hl
+0692 : CD B0 06 	"   "		call	L06B0
+0695 : E1 		" "		pop	hl
+0696 : C9 		" "		ret
+				;
+0697				L0697:
+0697 : 11 07 01 	"   "		ld	de,00107H
+069A : C3 B6 06 	"   "		jp	L06B6
+				;
+069D				L069D:
+069D : 57 		"W"		ld	d,a
+069E : 7E 		"~"		ld	a,(hl)
+069F : 2F 		"/"		cpl
+06A0 : 77 		"w"		ld	(hl),a
+06A1 : BE 		" "		cp	(hl)
+06A2 : 7A 		"z"		ld	a,d
+06A3 : CA AA 06 	"   "		jp	z,L06AA
+06A6 : 3E 09 		"> "		ld	a,009H
+06A8 : B7 		" "		or	a
+06A9 : C9 		" "		ret
+				;
+06AA				L06AA:
+06AA : 11 04 01 	"   "		ld	de,00104H
+06AD : C3 B6 06 	"   "		jp	L06B6
+				;
+06B0				L06B0:
+06B0 : 11 06 01 	"   "		ld	de,00106H
+06B3 : C3 B6 06 	"   "		jp	L06B6
+				;
+06B6				L06B6:
+06B6 : FE 04 		"  "		cp	004H
+06B8 : DA BF 06 	"   "		jp	c,L06BF
+06BB : 3E 06 		"> "		ld	a,006H
+06BD : B7 		" "		or	a
+06BE : C9 		" "		ret
+				;
+06BF				L06BF:
+06BF : FE 01 		"  "		cp	001H
+06C1 : C2 C6 06 	"   "		jp	nz,L06C6
+06C4 : 3E 03 		"> "		ld	a,003H
+06C6				L06C6:
+06C6 : E5 		" "		push	hl
+06C7 : F5 		" "		push	af
+06C8 : 7C 		"|"		ld	a,h
+06C9 : FE 0C 		"  "		cp	00CH
+06CB : DA D1 06 	"   "		jp	c,L06D1
+06CE : C2 D4 06 	"   "		jp	nz,L06D4
+06D1				L06D1:
+06D1 : 21 87 40 	"! @"		ld	hl,04087H
+06D4				L06D4:
+06D4 : F1 		" "		pop	af
+06D5 : E5 		" "		push	hl
+06D6 : D5 		" "		push	de
+06D7 : 58 		"X"		ld	e,b
+06D8 : 51 		"Q"		ld	d,c
+06D9 : C1 		" "		pop	bc
+06DA : D5 		" "		push	de
+06DB : 07 		" "		rlca
+06DC : 07 		" "		rlca
+06DD : 07 		" "		rlca
+06DE : 07 		" "		rlca
+06DF : A9 		" "		xor	c
+06E0 : 4F 		"O"		ld	c,a
+06E1 : C5 		" "		push	bc
+06E2 : 3E 80 		"> "		ld	a,080H
+06E4 : F5 		" "		push	af
+06E5 : 01 F9 FF 	"   "		ld	bc,0FFF9H
+06E8 : 09 		" "		add	hl,bc
+06E9 : 3E 10 		"> "		ld	a,010H
+06EB : F5 		" "		push	af
+06EC : C3 0B 07 	"   "		jp	L070B
+				;
+06EF				L06EF:
+06EF : CD 59 07 	" Y "		call	L0759
+06F2 : 4A 		"J"		ld	c,d
+06F3 : C5 		" "		push	bc
+06F4 : C3 0B 07 	"   "		jp	L070B
+				;
+06F7				L06F7:
+06F7 : E1 		" "		pop	hl
+06F8 : E1 		" "		pop	hl
+06F9 : E1 		" "		pop	hl
+06FA : 4C 		"L"		ld	c,h
+06FB : 45 		"E"		ld	b,l
+06FC : E1 		" "		pop	hl
+06FD : E1 		" "		pop	hl
+06FE : B7 		" "		or	a
+06FF : F5 		" "		push	af
+0700 : 7A 		"z"		ld	a,d
+0701 : FE FF 		"  "		cp	0FFH
+0703 : 11 00 00 	"   "		ld	de,00000H
+0706 : CA F8 07 	"   "		jp	z,L07F8
+0709 : F1 		" "		pop	af
+070A : C9 		" "		ret
+				;
+070B				L070B:
+070B : 4D 		"M"		ld	c,l
+070C : 44 		"D"		ld	b,h
+070D : 21 03 00 	"!  "		ld	hl,00003H
+0710 : 39 		"9"		add	hl,sp
+0711 : EB 		" "		ex	de,hl
+0712 : 26 07 		"& "		ld	h,007H
+0714				L0714:
+0714 : 1A 		" "		ld	a,(de)
+0715 : 6F 		"o"		ld	l,a
+0716 : 0A 		" "		ld	a,(bc)
+0717 : 12 		" "		ld	(de),a
+0718 : 7D 		"}"		ld	a,l
+0719 : 02 		" "		ld	(bc),a
+071A : 13 		" "		inc	de
+071B : 03 		" "		inc	bc
+071C : 25 		"%"		dec	h
+071D : C2 14 07 	"   "		jp	nz,L0714
+0720 : 21 F9 FF 	"!  "		ld	hl,0FFF9H
+0723 : 09 		" "		add	hl,bc
+0724 : 44 		"D"		ld	b,h
+0725 : 4D 		"M"		ld	c,l
+0726 : 21 0A 00 	"!  "		ld	hl,0000AH
+0729 : 39 		"9"		add	hl,sp
+072A : EB 		" "		ex	de,hl
+072B : 1A 		" "		ld	a,(de)
+072C : 6F 		"o"		ld	l,a
+072D : 13 		" "		inc	de
+072E : 1A 		" "		ld	a,(de)
+072F : 67 		"g"		ld	h,a
+0730 : EB 		" "		ex	de,hl
+0731 : 7A 		"z"		ld	a,d
+0732 : FE 0C 		"  "		cp	00CH
+0734 : DA 3A 07 	" : "		jp	c,L073A
+0737 : C2 4E 07 	" N "		jp	nz,L074E
+073A				L073A:
+073A : 01 87 40 	"  @"		ld	bc,04087H
+073D : 26 80 		"& "		ld	h,080H
+073F				L073F:
+073F : 1A 		" "		ld	a,(de)
+0740 : 6F 		"o"		ld	l,a
+0741 : 0A 		" "		ld	a,(bc)
+0742 : 12 		" "		ld	(de),a
+0743 : 7D 		"}"		ld	a,l
+0744 : 02 		" "		ld	(bc),a
+0745 : 13 		" "		inc	de
+0746 : 03 		" "		inc	bc
+0747 : 25 		"%"		dec	h
+0748 : C2 3F 07 	" ? "		jp	nz,L073F
+074B : 01 80 40 	"  @"		ld	bc,04080H
+074E				L074E:
+074E : E1 		" "		pop	hl
+074F : 7C 		"|"		ld	a,h
+0750 : 55 		"U"		ld	d,l
+0751 : FE 10 		"  "		cp	010H
+0753 : CA EF 06 	"   "		jp	z,L06EF
+0756 : C3 F7 06 	"   "		jp	L06F7
+				;
+0759				L0759:
+0759 : 60 		"`"		ld	h,b
+075A : 69 		"i"		ld	l,c
+075B : 0E 0A 		"  "		ld	c,00AH
+075D				L075D:
+075D : 11 FF 0F 	"   "		ld	de,00FFFH
+0760				L0760:
+0760 : DB 70 		" p"		in	a,(070H)
+0762 : E6 04 		"  "		and	004H
+0764 : CA 7B 07 	" { "		jp	z,L077B
+0767 : DB 71 		" q"		in	a,(071H)
+0769 : DB 73 		" s"		in	a,(073H)
+076B : 06 01 		"  "		ld	b,001H
+076D : CD 15 02 	"   "		call	L0215
+0770 : 1D 		" "		dec	e
+0771 : C2 60 07 	" ` "		jp	nz,L0760
+0774 : 15 		" "		dec	d
+0775 : C2 60 07 	" ` "		jp	nz,L0760
+0778 : C3 A8 07 	"   "		jp	L07A8
+				;
+077B				L077B:
+077B : 7D 		"}"		ld	a,l
+077C : D3 71 		" q"		out	(071H),a
+077E : 7C 		"|"		ld	a,h
+077F : D3 72 		" r"		out	(072H),a
+0781 : 11 FF FF 	"   "		ld	de,0FFFFH
+0784 : 06 09 		"  "		ld	b,009H
+0786				L0786:
+0786 : DB 70 		" p"		in	a,(070H)
+0788 : E6 04 		"  "		and	004H
+078A : C2 9E 07 	"   "		jp	nz,L079E
+078D : 1D 		" "		dec	e
+078E : C2 86 07 	"   "		jp	nz,L0786
+0791 : 15 		" "		dec	d
+0792 : C2 86 07 	"   "		jp	nz,L0786
+0795 : 05 		" "		dec	b
+0796 : C2 86 07 	"   "		jp	nz,L0786
+0799 : D3 77 		" w"		out	(077H),a
+079B : C3 A8 07 	"   "		jp	L07A8
+				;
+079E				L079E:
+079E : DB 71 		" q"		in	a,(071H)
+07A0 : DB 73 		" s"		in	a,(073H)
+07A2 : 16 00 		"  "		ld	d,000H
+07A4				L07A4:
+07A4 : B7 		" "		or	a
+07A5 : CA D9 07 	"   "		jp	z,L07D9
+07A8				L07A8:
+07A8 : 0D 		" "		dec	c
+07A9 : C2 5D 07 	" ] "		jp	nz,L075D
+07AC : E6 0F 		"  "		and	00FH
+07AE : FE 0F 		"  "		cp	00FH
+07B0 : 06 08 		"  "		ld	b,008H
+07B2 : C8 		" "		ret	z
+07B3 : FE 0E 		"  "		cp	00EH
+07B5 : 06 07 		"  "		ld	b,007H
+07B7 : C8 		" "		ret	z
+07B8 : FE 0A 		"  "		cp	00AH
+07BA : 06 07 		"  "		ld	b,007H
+07BC : C8 		" "		ret	z
+07BD : FE 03 		"  "		cp	003H
+07BF : 06 08 		"  "		ld	b,008H
+07C1 : C8 		" "		ret	z
+07C2 : FE 08 		"  "		cp	008H
+07C4 : 06 04 		"  "		ld	b,004H
+07C6 : C8 		" "		ret	z
+07C7 : FE 04 		"  "		cp	004H
+07C9 : 06 07 		"  "		ld	b,007H
+07CB : C8 		" "		ret	z
+07CC : FE 02 		"  "		cp	002H
+07CE : 06 01 		"  "		ld	b,001H
+07D0 : C8 		" "		ret	z
+07D1 : FE 01 		"  "		cp	001H
+07D3 : 06 03 		"  "		ld	b,003H
+07D5 : C8 		" "		ret	z
+07D6 : 06 02 		"  "		ld	b,002H
+07D8 : C9 		" "		ret
+				;
+07D9				L07D9:
+07D9 : 06 00 		"  "		ld	b,000H
+07DB : C9 		" "		ret
+				;
+07DC : DB 70 		" p"		in	a,(070H)
+07DE : E6 04 		"  "		and	004H
+07E0 : CA F3 07 	"   "		jp	z,L07F3
+07E3 : DB 71 		" q"		in	a,(071H)
+07E5 : FE 02 		"  "		cp	002H
+07E7 : DB 73 		" s"		in	a,(073H)
+07E9 : CA F8 07 	"   "		jp	z,L07F8
+07EC : D1 		" "		pop	de
+07ED : D1 		" "		pop	de
+07EE : 16 FF 		"  "		ld	d,0FFH
+07F0 : C3 A4 07 	"   "		jp	L07A4
+				;
+07F3				L07F3:
+07F3 : 3E 12 		"> "		ld	a,012H
+07F5 : CD 15 01 	"   "		call	L0115
+07F8				L07F8:
+07F8 : 3E 48 		">H"		ld	a,048H
+07FA : D3 03 		"  "		out	(003H),a
+07FC : F1 		" "		pop	af
+07FD : FB 		" "		ei
+07FE : C9 		" "		ret
+				;
+07FF : 06 00 		"  "		db	006H, 000H
+
+;--------------------------------------------------------------
+Symbol table
+============
+
+Value	Type	Name
+-----	----	----
+0038	 04	L0038
+003B	 04	L003B
+0046	 04	L0046
+0058	 04	L0058
+00AF	 04	L00AF
+00CF	 04	L00CF
+00D4	 04	L00D4
+00EC	 04	L00EC
+010B	 04	L010B
+010F	 04	L010F
+0115	 04	L0115
+0126	 04	L0126
+0127	 04	L0127
+012B	 04	L012B
+012E	 04	L012E
+0134	 04	L0134
+0137	 04	L0137
+0147	 04	L0147
+017D	 04	L017D
+0190	 04	L0190
+0196	 04	L0196
+019E	 04	L019E
+01A5	 04	L01A5
+01AF	 04	L01AF
+01B4	 04	L01B4
+01BD	 04	L01BD
+01CC	 04	L01CC
+01E1	 04	L01E1
+01ED	 04	L01ED
+01F0	 04	L01F0
+01F1	 04	L01F1
+01F6	 04	L01F6
+01F7	 04	L01F7
+0215	 04	L0215
+0216	 04	L0216
+0218	 04	L0218
+0222	 04	L0222
+0231	 04	L0231
+023B	 04	L023B
+024C	 04	L024C
+0251	 04	L0251
+0254	 04	L0254
+025A	 04	L025A
+025F	 04	L025F
+0264	 04	L0264
+0267	 04	L0267
+027D	 04	L027D
+0281	 04	L0281
+0284	 04	L0284
+0287	 04	L0287
+0297	 04	L0297
+0299	 04	L0299
+02A0	 04	L02A0
+02A6	 04	L02A6
+02A9	 04	L02A9
+02B1	 04	L02B1
+02B3	 04	L02B3
+02BF	 04	L02BF
+02C2	 04	L02C2
+02C5	 04	L02C5
+02D2	 04	L02D2
+02E1	 04	L02E1
+02EC	 04	L02EC
+02F7	 04	L02F7
+0308	 04	L0308
+031D	 04	L031D
+0332	 04	L0332
+0337	 04	L0337
+034B	 04	L034B
+0382	 04	L0382
+0385	 04	L0385
+038A	 04	L038A
+038E	 04	L038E
+0393	 04	L0393
+039C	 04	L039C
+03A7	 04	L03A7
+03AD	 04	L03AD
+03B6	 04	L03B6
+03BB	 04	L03BB
+03E1	 04	L03E1
+03E6	 04	L03E6
+03F8	 04	L03F8
+0419	 04	L0419
+0427	 04	L0427
+042A	 04	L042A
+043D	 04	L043D
+044D	 04	L044D
+0467	 04	L0467
+048C	 04	L048C
+049C	 04	L049C
+04A8	 04	L04A8
+04AF	 04	L04AF
+04B4	 04	L04B4
+04BF	 04	L04BF
+04D8	 04	L04D8
+04DC	 04	L04DC
+04E1	 04	L04E1
+04E9	 04	L04E9
+04F4	 04	L04F4
+04FF	 04	L04FF
+051B	 04	L051B
+0524	 04	L0524
+0527	 04	L0527
+0538	 04	L0538
+053C	 04	L053C
+0548	 04	L0548
+055B	 04	L055B
+055F	 04	L055F
+056F	 04	L056F
+0580	 04	L0580
+0583	 04	L0583
+059E	 04	L059E
+05A3	 04	L05A3
+05C0	 04	L05C0
+05CE	 04	L05CE
+05EB	 04	L05EB
+0600	 04	L0600
+0615	 04	L0615
+0645	 04	L0645
+0670	 04	L0670
+0677	 04	L0677
+0685	 04	L0685
+068E	 04	L068E
+0691	 04	L0691
+0697	 04	L0697
+069D	 04	L069D
+06AA	 04	L06AA
+06B0	 04	L06B0
+06B6	 04	L06B6
+06BF	 04	L06BF
+06C6	 04	L06C6
+06D1	 04	L06D1
+06D4	 04	L06D4
+06EF	 04	L06EF
+06F7	 04	L06F7
+070B	 04	L070B
+0714	 04	L0714
+073A	 04	L073A
+073F	 04	L073F
+074E	 04	L074E
+0759	 04	L0759
+075D	 04	L075D
+0760	 04	L0760
+077B	 04	L077B
+0786	 04	L0786
+079E	 04	L079E
+07A4	 04	L07A4
+07A8	 04	L07A8
+07D9	 04	L07D9
+07F3	 04	L07F3
+07F8	 04	L07F8
+0A09	 04	L0A09
+0BE0	 04	X0BE0
+0BE2	 04	X0BE2
+0BE4	 04	X0BE4
+0BE6	 04	X0BE6
+0BE7	 04	X0BE7
+0BE8	 04	X0BE8
+0BEA	 04	X0BEA
+0BEB	 04	L0BEB
+0BEE	 04	L0BEE
+0BEF	 04	X0BEF
+0BF1	 04	L0BF1
+0BF4	 04	L0BF4
+0BF7	 04	L0BF7
+0BFA	 04	L0BFA
+0BFB	 04	X0BFB
+0BFD	 04	L0BFD
+0BFE	 04	X0BFE
+0D0C	 04	L0D0C
+1000	 04	L1000
+1AC5	 04	L1AC5
+
+Number of symbols:			172
+
+;--------------------------------------------------------------
