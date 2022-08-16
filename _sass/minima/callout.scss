@@ -11,3 +11,8 @@
     --callout-bg: rgba(13,202,240, 0.075);
     --callout-border: rgba(13,202,240, 0.5);
 }
+.callout-danger {
+    @extend .callout;
+    --callout-bg: rgba(240, 13, 13, 0.08);
+    --callout-border: rgba(240, 13, 13, 0.5);
+}
