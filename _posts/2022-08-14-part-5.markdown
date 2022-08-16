@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Часть 5: Основы программирования на ассемблере"
-permalink: /part-4/
+permalink: /part-5/
 ---
 
 {% capture tldr %}
